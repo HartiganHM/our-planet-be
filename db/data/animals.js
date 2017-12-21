@@ -6,7 +6,7 @@ const animalsData = [{
   height: '11 inches',
   weight: '3 to 20 pounds',
   length: '18 to 27 inches',
-  habitat: 'Antarctica / Arctic',
+  habitat: 'Arctic',
   facts: 'The Arctic fox is primarily a carnivore that lives inland, away from the coasts. They are dependent on the presence of smaller animals (most often lemmings) to survive.  Arctic foxes also hunt for sea birds, fish, and other marine life. Smaller rodent populations waver between times of abundance and scarcity, which leaves the Arctic fox vulnerable when these creatures are low in numbers.',
   human_benefit: 'The protection of the Arctic fox ensures the safety of a variety of other wildlife in the Arctic region.'
 }, {
@@ -17,7 +17,7 @@ const animalsData = [{
   height: '',
   weight: '70 to 175 pounds',
   length: '3.2 to 5.9 feet',
-  habitat: 'Antarctica / Arctic',
+  habitat: 'Arctic',
   facts: 'Often called the "polar wolf" or "white wolf," Arctic wolves inhabit the Arctic regions of North America and Greenland. Thanks to its isolation, the Arctic wolf is not threatened by hunting and habitat destruction in the same way as its southern relatives.',
   human_benefit: 'Arctic wolves are carnivorous hunters. By nature they help to control the populations of other animals in the region like the musk ox, caribou and Arctic hares.'
 }, {
@@ -39,7 +39,7 @@ const animalsData = [{
   height: '3.35 feet to shoulders',
   weight: 'Up to 1,500 lbs',
   length: '6.5 feet',
-  habitat: 'Antarctica / Arctic',
+  habitat: 'Arctic',
   facts: 'Few animals have captured the imagination like brown bears. They can stand on two legs, walk on the soles of their feet, pick things up with their “fingers,” and often eat what we eat. This—coupled with their ability to communicate with one another through scratch marks left on trees, smells and sounds— establishes a similarity to our own way of life. Some of the largest living carnivores, brown bears have fallen prey to hunting and other conflicts with humans.',
   human_benefit: 'While brown bear population numbers are currently stable, they are considered a high priority in conservation. Given their dependence on large natural areas, brown bears are important management indicators for a number of other wildlife species. Brown bears also play important roles as predators who keep other animal populations in check. Additionally, they act as seed dispersers, helping to sustain their own environment.'
 }, {
@@ -380,7 +380,7 @@ const animalsData = [{
   height: '',
   weight: '800–1,300 pounds',
   length: '6–9 feet',
-  habitat: 'Antarctica / Arctic',
+  habitat: 'Arctic',
   facts: 'Polar bears are classified as marine mammals because they spend most of their lives on the sea ice of the Arctic Ocean. They have a thick layer of body fat and a water-repellant coat that insulates them from the cold air and water. Considered talented swimmers, they can sustain a pace of six miles per hour by paddling with their front paws and holding their hind legs flat like a rudder.\n\nPolar bears spend over 50% of their time hunting for food. A polar bear might catch only one or two out of ten seals it hunts, depending on the time of year and other variables. Their diet mainly consists of ringed and bearded seals because they need large amounts of fat to survive.\n\nScientists have divided the total polar bear population into 19 units or subpopulations. Of those, the latest data from the IUCN Polar Bear Specialist Group show that three subpopulations are in decline and that there is a high estimated risk of future decline due to climate change.',
   human_benefit: 'Polar bears are at the top of the food chain and have an important role in the overall health of the marine environment. Over thousands of years, polar bears have also been an important part of the cultures and economies of Arctic peoples. Polar bears depend on sea ice for their existence and are directly impacted by climate change—serving as an important indicator species.'
 }, {
