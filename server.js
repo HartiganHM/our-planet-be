@@ -5,9 +5,17 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
-app.listen(3000, () => {
-  console.log('Our Planet BE running on localhost:3000');
-});
+const urlLogger = (request, response, next) => {
+  console.log('Request URL:', request.url);
+  next();
+}
+
+const timeLogger = (request, response, next) => {
+  console.log('Datetime:', new Date(Date.now()).toString());
+  next();
+};
+
+app.use(urlLogger, timeLogger);
 
 app.get('/api/v1/continents', (request, response) => {
   database('continents').select()
@@ -27,6 +35,10 @@ app.get('/api/v1/animals', (request, response) => {
     .catch((error) => {
       response.status(500).json({ error });
     });
+});
+
+app.listen(3000, () => {
+  console.log('Our Planet BE running on localhost:3000');
 });
 
 // app.post('/api/v1/papers', (request, response) => {
