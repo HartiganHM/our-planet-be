@@ -1,5 +1,5 @@
-import continentsData from '../../data/continents';
-import animalsData from '../../data/animals';
+const continentsData = require('../../data/continents');
+const animalsData = require('../../data/animals');
 
 const createContinent = (knex, continent) => {
   return knex('continents').insert(continent, 'id')
