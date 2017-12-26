@@ -37,8 +37,8 @@ app.get('/api/v1/animals', (request, response) => {
     });
 });
 
-app.listen(3000, () => {
-  console.log('Our Planet BE running on localhost:3000');
+app.listen(3001, () => {
+  console.log('Our Planet BE running on localhost:3001');
 });
 
 // app.post('/api/v1/papers', (request, response) => {

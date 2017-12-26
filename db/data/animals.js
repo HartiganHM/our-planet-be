@@ -29,7 +29,10 @@ const animalsData = [{
   weight: '75 - 100 tons',
   length: 'Average of 50 - 60 feet',
   habitat: 'Oceans',
-  facts: 'This predominantly Arctic species is associated with ice floes. Its movement patterns are therefore influenced by the melting and freezing of the ice.\n\nBowhead whales are capable of breaking through sea ice at least seven inches thick with their large skulls and powerful bodies.\n\nAdult bowheads are entirely black except the front part of the lower jaw which is white and prominently upturned. They can grow up to 60 feet long while still being able to leap entirely out of water. Bowheads filter their food through baleen by opening their mouths and straining plankton from the surface, the water column, or the sea floor.\n\nData has shown that bowhead whales may be among the longest-lived animals on earth. Based on the recovery of stone harpoon tips in their blubber, and from analysis of eye tissue, scientists believe that the life-span of bowhead whales can be over 200 years.',
+  facts: `This predominantly Arctic species is associated with ice floes. Its movement patterns are therefore influenced by the melting and freezing of the ice.
+  Bowhead whales are capable of breaking through sea ice at least seven inches thick with their large skulls and powerful bodies.
+  Adult bowheads are entirely black except the front part of the lower jaw which is white and prominently upturned. They can grow up to 60 feet long while still being able to leap entirely out of water. Bowheads filter their food through baleen by opening their mouths and straining plankton from the surface, the water column, or the sea floor.
+  Data has shown that bowhead whales may be among the longest-lived animals on earth. Based on the recovery of stone harpoon tips in their blubber, and from analysis of eye tissue, scientists believe that the life-span of bowhead whales can be over 200 years.`,
   human_benefit: 'Whales are at the top of the food chain and have an important role in the overall health of the marine environment. The bowhead whale’s conservation status is listed as “least concern” overall, but some populations (such as near Greenland) are endangered. They have traditionally been hunted by commercial whalers until the last century for oil, meat, and baleen.  Today, native communities in both the U.S. and Russia hunt bowheads for subsistence purposes. This subsistence whaling is approved and its sustainability is ensured by the International Whaling Commission (IWC).'
 }, {
   name: 'Brown Bear',
@@ -51,7 +54,8 @@ const animalsData = [{
   weight: '',
   length: 'Between 40 and 50 feet long',
   habitat: 'Oceans',
-  facts: 'Gray whales have a hump and a ridge of sharp bumps along their backs, instead of a dorsal fin. They are a type of baleen whale, which means they filter food from the water through special bristly structures in their mouths. Gray whales stay close to shore and feed in shallow water. Their well-known migrations take them between feeding and breeding areas, swimming as much as 12,000 miles round trip.\n\n Critically endangered western gray whales migrate into their summer feeding grounds near Sahkalin Island, Russia in late May or early June and return to their winter feeding grounds in the South China Sea in late autumn. Summer feeding grounds for the eastern population lie in the Bering and Chukchi Seas between Alaska and Russia. In the winter, these eastern gray whales migrate south along the west coast of the U.S to Mexico to breed and have their calves.',
+  facts: `Gray whales have a hump and a ridge of sharp bumps along their backs, instead of a dorsal fin. They are a type of baleen whale, which means they filter food from the water through special bristly structures in their mouths. Gray whales stay close to shore and feed in shallow water. Their well-known migrations take them between feeding and breeding areas, swimming as much as 12,000 miles round trip.
+   Critically endangered western gray whales migrate into their summer feeding grounds near Sahkalin Island, Russia in late May or early June and return to their winter feeding grounds in the South China Sea in late autumn. Summer feeding grounds for the eastern population lie in the Bering and Chukchi Seas between Alaska and Russia. In the winter, these eastern gray whales migrate south along the west coast of the U.S to Mexico to breed and have their calves.`,
   human_benefit: 'Whales are at the top of the food chain and have an important role in the overall health of the marine environment. They are also highly vulnerable to human activities in the ocean.'
 }, {
   name: 'Macaw',
@@ -106,7 +110,8 @@ const animalsData = [{
   weight: 'up to 32 pounds',
   length: '16 to 30 inches, tail length additional 16 to 34 inches',
   habitat: 'Australia',
-  facts: 'The same factors that threaten the golden-mantled tree kangaroo also put many of the 13 other tree kangaroo species at risk. Many tree kangaroo species are incredibly rare and most are decreasing in number. These animals represent an interesting divergence in the evolution of Macropods—the family of marsupials that includes kangaroos and wallabies. Macropods were once all tree dwellers but millions of years ago they descended from the trees to live on the ground. The ancestors of tree kangaroos eventually headed back up into the foliage and they are now the largest tree-dwelling mammals in Australia.\n\nTree kangaroos live in lowland and mountainous rainforests in Papua New Guinea, Indonesia and the far north of Queensland, Australia. They have adapted to life in the trees, with shorter legs and stronger forelimbs for climbing, giving them somewhat of the appearance of a cross between a kangaroo and a lemur.',
+  facts: `The same factors that threaten the golden-mantled tree kangaroo also put many of the 13 other tree kangaroo species at risk. Many tree kangaroo species are incredibly rare and most are decreasing in number. These animals represent an interesting divergence in the evolution of Macropods—the family of marsupials that includes kangaroos and wallabies. Macropods were once all tree dwellers but millions of years ago they descended from the trees to live on the ground. The ancestors of tree kangaroos eventually headed back up into the foliage and they are now the largest tree-dwelling mammals in Australia.
+  Tree kangaroos live in lowland and mountainous rainforests in Papua New Guinea, Indonesia and the far north of Queensland, Australia. They have adapted to life in the trees, with shorter legs and stronger forelimbs for climbing, giving them somewhat of the appearance of a cross between a kangaroo and a lemur.`,
   human_benefit: 'Millions of years ago the ancestors of Macropods—the family of marsupials that includes kangaroos and wallabies—descended from the trees. But one group of Macropods, known as tree kangaroos, eventually returned to that arboreal life.'
 }, {
   name: 'Albacore Tuna',
@@ -128,7 +133,8 @@ const animalsData = [{
   weight: '1500 - 3500 pounds (up to 1.5 tons)',
   length: '8.5 to 22 feet',
   habitat: 'Oceans',
-  facts: 'Belugas are extremely sociable mammals that live, hunt and migrate together in pods, ranging from a few individuals to hundreds of whales. Their bulbous forehead, called a "melon”, is flexible and capable of changing shape. This allows them to make different facial expressions. Belugas can produce a series of chirps, clicks, whistles and squeals, which give the beluga its other name, "the canary of the sea." They may sound like music or even nonsense to us, but to fellow belugas they convey important information.\n\nMany populations of belugas migrate as the sea ice changes in the Arctic. They move south in the fall as the ice forms and then return to feed again in the spring, as the ice breaks up. They can also be found near river mouths, and sometimes even venture up river. Belugas feed on a variety of fish species, such as salmon and herring, as well as shrimp, crabs and mollusks.',
+  facts: `Belugas are extremely sociable mammals that live, hunt and migrate together in pods, ranging from a few individuals to hundreds of whales. Their bulbous forehead, called a "melon”, is flexible and capable of changing shape. This allows them to make different facial expressions. Belugas can produce a series of chirps, clicks, whistles and squeals, which give the beluga its other name, "the canary of the sea." They may sound like music or even nonsense to us, but to fellow belugas they convey important information.
+  Many populations of belugas migrate as the sea ice changes in the Arctic. They move south in the fall as the ice forms and then return to feed again in the spring, as the ice breaks up. They can also be found near river mouths, and sometimes even venture up river. Belugas feed on a variety of fish species, such as salmon and herring, as well as shrimp, crabs and mollusks.`,
   human_benefit: 'Whales, like the beluga, are at the top of the food chain and have an important role in the overall health of the marine environment. Beluga whales are also culturally important to indigenous communities in the Arctic. Like polar bears, the beluga depends on sea ice for its existence and can be directly impacted by climate change.'
 }, {
   name: 'Greater Sage-grouse',
@@ -172,7 +178,8 @@ const animalsData = [{
   weight: 'Up to 4200 pounds',
   length: 'Up to 17 feet',
   habitat: 'Oceans',
-  facts: 'The narwhal looks like a cross between a whale and a unicorn with its long, spiraled tusk jutting from its head. Males most commonly have tusks, and some may even have two. The tusk, which can grow as long as 10 feet, is actually an enlarged tooth. Ongoing research indicates that the tusk has sensory capability, with up to 10 million nerve endings inside. The tusk may also play a role in the ways males exert dominance.\n\nNarwhals spend their lives in the Arctic waters of Canada, Greenland, Norway and Russia. The majority of the world’s narwhals winter for up to five months under the sea ice in the Baffin Bay-Davis Strait area (between Canada and western Greenland). Cracks in the ice allow them to breathe when needed, especially after dives, which can be up to a mile and a half deep. They feed mainly on Greenland halibut, along with other fish, squid and shrimp.',
+  facts: `The narwhal looks like a cross between a whale and a unicorn with its long, spiraled tusk jutting from its head. Males most commonly have tusks, and some may even have two. The tusk, which can grow as long as 10 feet, is actually an enlarged tooth. Ongoing research indicates that the tusk has sensory capability, with up to 10 million nerve endings inside. The tusk may also play a role in the ways males exert dominance.
+  Narwhals spend their lives in the Arctic waters of Canada, Greenland, Norway and Russia. The majority of the world’s narwhals winter for up to five months under the sea ice in the Baffin Bay-Davis Strait area (between Canada and western Greenland). Cracks in the ice allow them to breathe when needed, especially after dives, which can be up to a mile and a half deep. They feed mainly on Greenland halibut, along with other fish, squid and shrimp.`,
   human_benefit: 'Whales, like the narwhal, are at the top of the food chain and have an important role in the overall health of the marine environment. Narwhals are also culturally important to indigenous communities in the Arctic. Like polar bears, the narwhal depends on sea ice for its existence and can be directly impacted by climate change.'
 }, {
   name: 'Plains Bison',
@@ -260,7 +267,8 @@ const animalsData = [{
   weight: '2 - 5 tons',
   length: '',
   habitat: 'Africa',
-  facts: 'Forest elephants are an elusive subspecies of African elephants and inhabit the densely wooded rainforests of west and central Africa. Their preference for dense forest habitat prohibits traditional counting methods such as visual identification. Their population is usually estimated through "dung counts"—an analysis on the ground of the density and distribution of the feces.\n\nForest elephants are smaller than savanna elephants, the other African elephant subspecies. Their ears are more oval-shaped ears and their tusks are straighter and point downward (the tusks of savanna elephants curve outwards). There are also differences in the size and shape of the skull and skeleton. Forest elephants are found most commonly in countries with relatively large blocks of dense forest such as Gabon, the Democratic Republic of Congo (DRC), Cameroon and Central African Republic in central Africa and Côte d’Ivoire, Liberia, and Ghana in west Africa.',
+  facts: `Forest elephants are an elusive subspecies of African elephants and inhabit the densely wooded rainforests of west and central Africa. Their preference for dense forest habitat prohibits traditional counting methods such as visual identification. Their population is usually estimated through "dung counts"—an analysis on the ground of the density and distribution of the feces.
+  Forest elephants are smaller than savanna elephants, the other African elephant subspecies. Their ears are more oval-shaped ears and their tusks are straighter and point downward (the tusks of savanna elephants curve outwards). There are also differences in the size and shape of the skull and skeleton. Forest elephants are found most commonly in countries with relatively large blocks of dense forest such as Gabon, the Democratic Republic of Congo (DRC), Cameroon and Central African Republic in central Africa and Côte d’Ivoire, Liberia, and Ghana in west Africa.`,
   human_benefit: 'Forest elephants are found in dense forests and are essential for the germination of many rain forest trees. The seeds of these trees only germinate after passing through the elephant’s digestive tract.'
 }, {
   name: 'Giant Panda',
@@ -271,8 +279,11 @@ const animalsData = [{
   weight: '220 - 330 pounds',
   length: '',
   habitat: 'Asia',
-  facts: 'This peaceful creature with a distinctive black and white coat is adored by the world and considered a national treasure in China.\n\nPandas live mainly in bamboo forests high in the mountains of western China, where they subsist almost entirely on bamboo. They must eat from 26 to 84 pounds of it every day, a formidable task for which they use their enlarged wrist bones that function as opposable thumbs.\n\nA newborn panda is about the size of a stick of butter—about 1/900th the size of its mother—but can grow to up to 330 pounds as an adult. These bears are excellent tree climbers despite their bulk.',
-  human_benefit: 'Pandas play a crucial role in the bamboo forests where they roam by spreading seeds and facilitating growth of vegetation. In the Yangtze Basin where pandas live, the forests are home to a stunning array of wildlife such as dwarf blue sheep, multicolored pheasants and other endangered species, including the golden monkey, takin and crested ibis.\n\nThe panda’s habitat is at the geographic and economic heart of China, home to millions of people. By making this area more sustainable, we are also helping to increase the quality of life of local populations. Pandas bring huge economic benefits to local communities through ecotourism.'
+  facts: `This peaceful creature with a distinctive black and white coat is adored by the world and considered a national treasure in China.
+  Pandas live mainly in bamboo forests high in the mountains of western China, where they subsist almost entirely on bamboo. They must eat from 26 to 84 pounds of it every day, a formidable task for which they use their enlarged wrist bones that function as opposable thumbs.
+  A newborn panda is about the size of a stick of butter—about 1/900th the size of its mother—but can grow to up to 330 pounds as an adult. These bears are excellent tree climbers despite their bulk.`,
+  human_benefit: `Pandas play a crucial role in the bamboo forests where they roam by spreading seeds and facilitating growth of vegetation. In the Yangtze Basin where pandas live, the forests are home to a stunning array of wildlife such as dwarf blue sheep, multicolored pheasants and other endangered species, including the golden monkey, takin and crested ibis.
+  The panda’s habitat is at the geographic and economic heart of China, home to millions of people. By making this area more sustainable, we are also helping to increase the quality of life of local populations. Pandas bring huge economic benefits to local communities through ecotourism.`
 }, {
   name: 'Giant Tortoise',
   status: 'Vulnerable',
@@ -282,7 +293,8 @@ const animalsData = [{
   weight: 'Up to 700 pounds',
   length: 'Up to 4 feet long',
   habitat: 'Oceans',
-  facts: 'There are many subspecies of giant tortoises that are found on different islands and have different appearances. Those that live on the larger islands where there is more rain have “dome” shaped shells, while those that live in drier conditions are smaller tortoises and have a “saddleback” shell.\n\nOn June 24, 2012, the world-famous giant tortoise affectionately known as “Lonesome George” passed away. He was the last surviving land tortoise from Pinta Island, one of the northern islands in the Galápagos. Thought to be 100 years old, Lonesome George lived at the Charles Darwin Research Station since he was found in 1971. For more than three decades, the Galápagos National Park tried to save the Pinta subspecies by finding George a mate. Unfortunately they did not succeed. Sadly with Lonesome George’s passing, there will be no more Pinta Island tortoises.',
+  facts: `There are many subspecies of giant tortoises that are found on different islands and have different appearances. Those that live on the larger islands where there is more rain have “dome” shaped shells, while those that live in drier conditions are smaller tortoises and have a “saddleback” shell.
+  On June 24, 2012, the world-famous giant tortoise affectionately known as “Lonesome George” passed away. He was the last surviving land tortoise from Pinta Island, one of the northern islands in the Galápagos. Thought to be 100 years old, Lonesome George lived at the Charles Darwin Research Station since he was found in 1971. For more than three decades, the Galápagos National Park tried to save the Pinta subspecies by finding George a mate. Unfortunately they did not succeed. Sadly with Lonesome George’s passing, there will be no more Pinta Island tortoises.`,
   human_benefit: 'The giant tortoise is an iconic species from the Galápagos and is only found on these islands. They are the largest living tortoise in the world.'
 }, {
   name: 'Great White Shark',
@@ -304,7 +316,8 @@ const animalsData = [{
   weight: '4,000 - 6,000 pounds',
   length: '10 - 12.5 feet',
   habitat: 'Asia',
-  facts: 'The greater one-horned rhino (or “Indian rhino”) is the largest of the rhino species. Once widespread across the entire northern part of the Indian sub-continent, rhino populations plummeted as they were hunted for sport or killed as agricultural pests. This pushed the species very close to extinction and by the end of the 20th century, fewer than 200 animals remained.\n\nThe recovery of the greater one-horned rhino is among the greatest conservation success stories in Asia. Thanks to strict protection and management from Indian and Nepalese wildlife authorities, the greater one-horned rhino was brought back from the brink. Today populations have increased to around 3,500 rhinos in northeastern India and the Terai grasslands of Nepal.',
+  facts: `The greater one-horned rhino (or “Indian rhino”) is the largest of the rhino species. Once widespread across the entire northern part of the Indian sub-continent, rhino populations plummeted as they were hunted for sport or killed as agricultural pests. This pushed the species very close to extinction and by the end of the 20th century, fewer than 200 animals remained.
+  The recovery of the greater one-horned rhino is among the greatest conservation success stories in Asia. Thanks to strict protection and management from Indian and Nepalese wildlife authorities, the greater one-horned rhino was brought back from the brink. Today populations have increased to around 3,500 rhinos in northeastern India and the Terai grasslands of Nepal.`,
   human_benefit: 'Rhinos share their homes with other valuable plants and animals. When we protect greater one-horned rhinos, we also help protect these other species. These rhinos are also a symbol of national pride in the countries where they are found, which inspires environmental stewardship among local communities. These communities also benefit from the revenue generated through rhino ecotourism.'
 }, {
   name: 'Hippopotamus',
@@ -337,7 +350,9 @@ const animalsData = [{
   weight: '600 - 1500 pounds',
   length: '55 - 63 inches',
   habitat: 'Oceans',
-  facts: 'Leatherback turtles are named for their shell, which is leather-like rather than hard, like other turtles.\n\nThey are the largest sea turtle species and also one of the most migratory, crossing both the Atlantic and Pacific Oceans. Pacific leatherbacks migrate from nesting beaches in the Coral Triangle all the way to the California coast to feed on the abundant jellyfish every summer and fall.\n\nAlthough their distribution is wide, numbers of leatherback turtles have seriously declined during the last century as a result of intense egg collection and fisheries bycatch. Globally, leatherback status according to IUCN is listed as Vulnerable, but many subpopulations (such as in the Pacific and Southwest Atlantic) are Critically Endangered.',
+  facts: `Leatherback turtles are named for their shell, which is leather-like rather than hard, like other turtles.
+  They are the largest sea turtle species and also one of the most migratory, crossing both the Atlantic and Pacific Oceans. Pacific leatherbacks migrate from nesting beaches in the Coral Triangle all the way to the California coast to feed on the abundant jellyfish every summer and fall.
+  Although their distribution is wide, numbers of leatherback turtles have seriously declined during the last century as a result of intense egg collection and fisheries bycatch. Globally, leatherback status according to IUCN is listed as Vulnerable, but many subpopulations (such as in the Pacific and Southwest Atlantic) are Critically Endangered.`,
   human_benefit: 'Marine turtles are the living representatives of a group of reptiles that has existed on Earth and traveled our seas for the last 100 million years. They are a fundamental link in marine ecosystems. Leatherback turtles consume large numbers of jellyfish which helps to keep populations of these marine organisms in check. Marine turtles, including leatherbacks, also provide a vital source of income as a draw for ecotourism in coastal communities, especially in the Coral Triangle.'
 }, {
   name: 'Loggerhead Turtle',
@@ -348,7 +363,8 @@ const animalsData = [{
   weight: '175 - 400 pounds',
   length: '33 - 48 inches',
   habitat: 'Oceans',
-  facts: 'Loggerhead turtles are named for their large heads that support powerful jaw muscles, allowing them to crush hard-shelled prey like clams and sea urchins. They are less likely to be hunted for their meat or shell compared to other sea turtles. Bycatch, the accidental capture of marine animals in fishing gear, is a serious problem for loggerhead turtles because they frequently come in contact with fisheries.\n\nLoggerheads are the most common turtle in the Mediterranean, nesting on beaches from Greece and Turkey to Israel and Libya. Many of their nesting beaches are under threat from tourism development. Sea turtles are the living representatives of a group of reptiles that has existed on Earth and travelled our seas for the last 100 million years. They are a fundamental link in marine ecosystems and help maintain the health of coral reefs and sea grass beds.',
+  facts: `Loggerhead turtles are named for their large heads that support powerful jaw muscles, allowing them to crush hard-shelled prey like clams and sea urchins. They are less likely to be hunted for their meat or shell compared to other sea turtles. Bycatch, the accidental capture of marine animals in fishing gear, is a serious problem for loggerhead turtles because they frequently come in contact with fisheries.
+  Loggerheads are the most common turtle in the Mediterranean, nesting on beaches from Greece and Turkey to Israel and Libya. Many of their nesting beaches are under threat from tourism development. Sea turtles are the living representatives of a group of reptiles that has existed on Earth and travelled our seas for the last 100 million years. They are a fundamental link in marine ecosystems and help maintain the health of coral reefs and sea grass beds.`,
   human_benefit: 'The way loggerhead turtles feed on their hard-shelled prey recycles important nutrients and keeps ocean floor sediments in balance. Loggerhead turtles carry colonies of small plants and animals on their shells which serve as important habitat themselves. As many as 100 species of animals and plants have been recorded living on one single loggerhead turtle.'
 }, {
   name: 'Marine Iguana',
@@ -381,7 +397,9 @@ const animalsData = [{
   weight: '800–1,300 pounds',
   length: '6–9 feet',
   habitat: 'Antarctica / Arctic',
-  facts: 'Polar bears are classified as marine mammals because they spend most of their lives on the sea ice of the Arctic Ocean. They have a thick layer of body fat and a water-repellant coat that insulates them from the cold air and water. Considered talented swimmers, they can sustain a pace of six miles per hour by paddling with their front paws and holding their hind legs flat like a rudder.\n\nPolar bears spend over 50% of their time hunting for food. A polar bear might catch only one or two out of ten seals it hunts, depending on the time of year and other variables. Their diet mainly consists of ringed and bearded seals because they need large amounts of fat to survive.\n\nScientists have divided the total polar bear population into 19 units or subpopulations. Of those, the latest data from the IUCN Polar Bear Specialist Group show that three subpopulations are in decline and that there is a high estimated risk of future decline due to climate change.',
+  facts: `Polar bears are classified as marine mammals because they spend most of their lives on the sea ice of the Arctic Ocean. They have a thick layer of body fat and a water-repellant coat that insulates them from the cold air and water. Considered talented swimmers, they can sustain a pace of six miles per hour by paddling with their front paws and holding their hind legs flat like a rudder.
+  Polar bears spend over 50% of their time hunting for food. A polar bear might catch only one or two out of ten seals it hunts, depending on the time of year and other variables. Their diet mainly consists of ringed and bearded seals because they need large amounts of fat to survive.
+  Scientists have divided the total polar bear population into 19 units or subpopulations. Of those, the latest data from the IUCN Polar Bear Specialist Group show that three subpopulations are in decline and that there is a high estimated risk of future decline due to climate change.`,
   human_benefit: 'Polar bears are at the top of the food chain and have an important role in the overall health of the marine environment. Over thousands of years, polar bears have also been an important part of the cultures and economies of Arctic peoples. Polar bears depend on sea ice for their existence and are directly impacted by climate change—serving as an important indicator species.'
 }, {
   name: 'Savanna Elephant',
@@ -403,7 +421,8 @@ const animalsData = [{
   weight: '',
   length: '2 - 6 feet',
   habitat: 'Oceans',
-  facts: 'Seven different species of sea (or marine) turtles grace our ocean waters, from the shallow seagrass beds of the Indian Ocean, to the colorful reefs of the Coral Triangle, and even the sandy beaches of the Eastern Pacific. WWF’s work on sea turtles focuses on five of those species: green, hawksbill, loggerhead, leatherback and olive ridley.\n\nHuman activities have tipped the scales against the survival of these ancient mariners. Nearly all species of sea turtle are classified as Endangered. Slaughtered for their eggs, meat, skin and shells, sea turtles suffer from poaching and over-exploitation. They also face habitat destruction and accidental capture in fishing gear. Climate change has an impact on turtle nesting sites. It alters sand temperatures, which then affects the sex of hatchlings. ',
+  facts: `Seven different species of sea (or marine) turtles grace our ocean waters, from the shallow seagrass beds of the Indian Ocean, to the colorful reefs of the Coral Triangle, and even the sandy beaches of the Eastern Pacific. WWF’s work on sea turtles focuses on five of those species: green, hawksbill, loggerhead, leatherback and olive ridley.
+  Human activities have tipped the scales against the survival of these ancient mariners. Nearly all species of sea turtle are classified as Endangered. Slaughtered for their eggs, meat, skin and shells, sea turtles suffer from poaching and over-exploitation. They also face habitat destruction and accidental capture in fishing gear. Climate change has an impact on turtle nesting sites. It alters sand temperatures, which then affects the sex of hatchlings.`,
   human_benefit: 'Sea turtles are a fundamental link in marine ecosystems. They help maintain the health of sea grass beds and coral reefs that benefit commercially valuable species such as shrimp, lobster and tuna. Sea turtles are the live representatives of a group of reptiles that have existed on Earth and traveled our seas for the last 100 million years. Turtles have major cultural significance and tourism value.'
 }, {
   name: 'Snow Leopard',
@@ -414,7 +433,8 @@ const animalsData = [{
   weight: '',
   length: '2 - 5 ft.',
   habitat: 'Asia',
-  facts: 'The snow leopard’s powerful build allows it to scale great steep slopes with ease. Its hind legs give the snow leopard the ability to leap six times the length of its body. A long tail provides balance and agility and also wraps around the resting snow leopard as protection from the cold.\n\nFor millennia, this magnificent cat was the king of the mountains. The mountains were rich with their prey such as blue sheep, Argali wild sheep, ibex, marmots, pikas and hares. Snow leopards are found in 12 countries—including China, Bhutan, Nepal, India, Pakistan, Afghanistan, Russia, and Mongolia—but their population is dropping.',
+  facts: `The snow leopard’s powerful build allows it to scale great steep slopes with ease. Its hind legs give the snow leopard the ability to leap six times the length of its body. A long tail provides balance and agility and also wraps around the resting snow leopard as protection from the cold.
+  For millennia, this magnificent cat was the king of the mountains. The mountains were rich with their prey such as blue sheep, Argali wild sheep, ibex, marmots, pikas and hares. Snow leopards are found in 12 countries—including China, Bhutan, Nepal, India, Pakistan, Afghanistan, Russia, and Mongolia—but their population is dropping.`,
   human_benefit: 'Snow leopards play a key role as both top predator and as an indicator of the health of their high-altitude habitat. If snow leopards thrive, so will countless other species.'
 }, {
   name: 'Southern Rockhopper Penguin',
@@ -447,7 +467,8 @@ const animalsData = [{
   weight: '40 - 70 pounds',
   length: '30 - 56 inches',
   habitat: 'Africa',
-  facts: 'The wild dog is one of the world’s most endangered mammals. The largest populations remain in southern Africa and the southern part of East Africa (especially Tanzania and northern Mozambique).\n\nWild dogs are social and gather in packs of around ten individuals, but some packs number more than 40. They are opportunistic predators that hunt medium-sized ruminants, such as gazelles. In a sprint, African wild dogs can reach speeds of more than 44 miles per hour.',
+  facts: `The wild dog is one of the world’s most endangered mammals. The largest populations remain in southern Africa and the southern part of East Africa (especially Tanzania and northern Mozambique).
+  Wild dogs are social and gather in packs of around ten individuals, but some packs number more than 40. They are opportunistic predators that hunt medium-sized ruminants, such as gazelles. In a sprint, African wild dogs can reach speeds of more than 44 miles per hour.`,
   human_benefit: ''
 }, {
   name: 'Amur Tiger',
@@ -458,7 +479,9 @@ const animalsData = [{
   weight: '396–660 pounds',
   length: 'Up to 10 feet',
   habitat: 'Asia',
-  facts: 'Amur tigers were once found throughout the Russian Far East, northern China and the Korean peninsula. By the 1940s, hunting had driven the Amur tiger to the brink of extinction—with no more than 40 individuals remaining in the wild. The subspecies was saved when Russia became the first country in the world to grant the tiger full protection.\n\nBy the 1980s, the Amur tiger population had increased to around 500. Although poaching increased after the collapse of the Soviet Union, continued conservation and antipoaching efforts by many partners have helped keep the population stable at around 540 individuals.\n\nAmur tigers have the largest home range of any tiger subspecies because they have to search over large areas to find food due to low prey densities. They represent the largest unfragmented tiger population in the world.',
+  facts: `Amur tigers were once found throughout the Russian Far East, northern China and the Korean peninsula. By the 1940s, hunting had driven the Amur tiger to the brink of extinction—with no more than 40 individuals remaining in the wild. The subspecies was saved when Russia became the first country in the world to grant the tiger full protection.
+  By the 1980s, the Amur tiger population had increased to around 500. Although poaching increased after the collapse of the Soviet Union, continued conservation and antipoaching efforts by many partners have helped keep the population stable at around 540 individuals.
+  Amur tigers have the largest home range of any tiger subspecies because they have to search over large areas to find food due to low prey densities. They represent the largest unfragmented tiger population in the world.`,
   human_benefit: 'The vast tracts of tiger forests in the Amur-Heilong landscape are unique. This region comprises Korean pine and Mongolian oak, which provide an important habitat for the Amur tiger and its prey—as well as important economic resources for local communities.'
 }, {
   name: 'Asian Elephant',
@@ -469,7 +492,8 @@ const animalsData = [{
   weight: 'Around 11,000 pounds',
   length: 'Around 21 feet',
   habitat: 'Asia',
-  facts: 'Elephants are an important cultural icon in Asia. According to Hindu mythology, the gods (deva) and the demons (asura) churned the oceans in a search for the elixir of life so that they would become immortal. As they did so, nine jewels surfaced, one of which was the elephant. In Hinduism, the powerful deity honored before all sacred rituals is the elephant-headed Lord Ganesha, who is also called the Remover of Obstacles.\n\nAsian elephants are extremely sociable, forming groups of six to seven related females that are led by the oldest female, the matriarch. Like African elephants, these groups occasionally join others to form herds, although these associations are relatively transient.',
+  facts: `Elephants are an important cultural icon in Asia. According to Hindu mythology, the gods (deva) and the demons (asura) churned the oceans in a search for the elixir of life so that they would become immortal. As they did so, nine jewels surfaced, one of which was the elephant. In Hinduism, the powerful deity honored before all sacred rituals is the elephant-headed Lord Ganesha, who is also called the Remover of Obstacles.
+  Asian elephants are extremely sociable, forming groups of six to seven related females that are led by the oldest female, the matriarch. Like African elephants, these groups occasionally join others to form herds, although these associations are relatively transient.`,
   human_benefit: 'Elephants are not only a cultural icon throughout Asia, they also help to maintain the integrity of forest and grassland habitats.'
 }, {
   name: 'Bengal Tiger',
@@ -524,7 +548,8 @@ const animalsData = [{
   weight: '68 to 86 pounds',
   length: '',
   habitat: 'Africa',
-  facts: 'Bonobos and chimpanzees look very similar and both share 98.7% of their DNA with humans—making the two species our closest living relatives. Bonobos are usually a bit smaller, leaner and darker than chimpanzees. Their society is also different—bonobo groups tend to be more peaceful and are led by females. They also maintain relationships and settle conflicts through sex. However, bonobo life isn’t entirely violence free; if two groups of bonobos come together, they may engage in serious fighting.\n\nCivil unrest and increasing poverty in the area around the bonobos’ forests have contributed to bonobo poaching and deforestation. Though the size of the bonobo population is largely unknown, it has likely been declining for the last 30 years. Scientists believe that the decline will continue for the next 45 to 55 years due to the bonobo’s low reproductive rate and growing threats.',
+  facts: `Bonobos and chimpanzees look very similar and both share 98.7% of their DNA with humans—making the two species our closest living relatives. Bonobos are usually a bit smaller, leaner and darker than chimpanzees. Their society is also different—bonobo groups tend to be more peaceful and are led by females. They also maintain relationships and settle conflicts through sex. However, bonobo life isn’t entirely violence free; if two groups of bonobos come together, they may engage in serious fighting.
+  Civil unrest and increasing poverty in the area around the bonobos’ forests have contributed to bonobo poaching and deforestation. Though the size of the bonobo population is largely unknown, it has likely been declining for the last 30 years. Scientists believe that the decline will continue for the next 45 to 55 years due to the bonobo’s low reproductive rate and growing threats.`,
   human_benefit: 'Bonobos share 98.7% of their genetic code with humans, making them, along with chimpanzees, our closest living relatives. As the last great ape to be scientifically discovered, much still remains unknown about the bonobo.'
 }, {
   name: 'Borneo Pygmy Elephant',
@@ -535,7 +560,8 @@ const animalsData = [{
   weight: '',
   length: '',
   habitat: 'Asia',
-  facts: 'Walt Disney himself couldn\'t have crafted a cuter elephant. The pygmy elephants of Borneo are baby-faced with oversized ears, plump bellies and tails so long they sometimes drag on the ground as they walk. They are also more gentle-natured than their Asian elephant counterparts.\n\nOnce believed to be remnants of a domesticated herd given to the Sultan of Sulu in the 17th century, pygmy elephants were determined by the World Wildlife Foundation to be genetically different from other Asian elephants. DNA evidence proved these elephants were isolated about 300,000 years ago from their cousins on mainland Asia and Sumatra. Over time, they became smaller with relatively larger ears, longer tails and straighter tusks. Today, the pygmy elephants of Borneo are the smallest elephants in Asia.',
+  facts: `Walt Disney himself couldn\'t have crafted a cuter elephant. The pygmy elephants of Borneo are baby-faced with oversized ears, plump bellies and tails so long they sometimes drag on the ground as they walk. They are also more gentle-natured than their Asian elephant counterparts.
+  Once believed to be remnants of a domesticated herd given to the Sultan of Sulu in the 17th century, pygmy elephants were determined by the World Wildlife Foundation to be genetically different from other Asian elephants. DNA evidence proved these elephants were isolated about 300,000 years ago from their cousins on mainland Asia and Sumatra. Over time, they became smaller with relatively larger ears, longer tails and straighter tusks. Today, the pygmy elephants of Borneo are the smallest elephants in Asia.`,
   human_benefit: 'Borneo’s elephants are a high conservation priority, yet they remain the least-understood elephants in the world.'
 }, {
   name: 'Chimpanzee',
@@ -546,7 +572,8 @@ const animalsData = [{
   weight: '',
   length: '',
   habitat: 'Africa',
-  facts: 'Like us, chimps are highly social animals, care for their offspring for years and can live to be over 50. In fact, chimpanzees are our closest cousins; we share about 98 percent of our genes.\n\nIn their habitat in the forests of central Africa, chimpanzees spend most of their days in the tree tops. When they do come down to earth, chimps usually travel on all fours, though they can walk on their legs like humans for as far as a mile. They use sticks to fish termites out of mounds and bunches of leaves to sop up drinking water.',
+  facts: `Like us, chimps are highly social animals, care for their offspring for years and can live to be over 50. In fact, chimpanzees are our closest cousins; we share about 98 percent of our genes.
+  In their habitat in the forests of central Africa, chimpanzees spend most of their days in the tree tops. When they do come down to earth, chimps usually travel on all fours, though they can walk on their legs like humans for as far as a mile. They use sticks to fish termites out of mounds and bunches of leaves to sop up drinking water.`,
   human_benefit: 'Despite our shared lineage, humans are pushing chimpanzees toward extinction. Chimps have already disappeared completely from four countries and are under tremendous pressure everywhere else they live.'
 }, {
   name: 'Fin Whale',
@@ -557,7 +584,8 @@ const animalsData = [{
   weight: 'Almost 80 tons',
   length: '65 - 80 feet',
   habitat: 'Oceans',
-  facts: 'Some scientists have speculated that fin whales circle schools of fish with the white side facing the prey and frightening them into denser schools that are easier for the whale to catch. The fin whale, like other baleen whales, strains its food from the water through baleen plates.\n\nNext to the blue whale, the fin whale is the second largest mammal in the world. They have a distinct ridge along their back behind the dorsal fin, which gives it the nickname "razorback.” Fin whales have a very unusual feature: the lower right jaw is bright white and the lower left jaw is black.',
+  facts: `Some scientists have speculated that fin whales circle schools of fish with the white side facing the prey and frightening them into denser schools that are easier for the whale to catch. The fin whale, like other baleen whales, strains its food from the water through baleen plates.
+  Next to the blue whale, the fin whale is the second largest mammal in the world. They have a distinct ridge along their back behind the dorsal fin, which gives it the nickname "razorback.” Fin whales have a very unusual feature: the lower right jaw is bright white and the lower left jaw is black.`,
   human_benefit: 'Whales are at the top of the food chain and have an important role in the overall health of the marine environment. The fin whale has been severely impacted worldwide by commercial whaling. Nearly 750,000 animals were killed in areas of the Southern Hemisphere alone between 1904 and 1979, and they are rarely seen there today. Their current status is unknown in most areas outside of the North Atlantic.'
 }, {
   name: 'Galápagos Penguin',
@@ -579,7 +607,8 @@ const animalsData = [{
   weight: '330 - 374 pounds',
   length: '7 - 8.9 feet',
   habitat: 'Asia',
-  facts: 'Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges.\n\nThe Ganges river dolphin can only live in freshwater and is essentially blind. They hunt by emitting ultrasonic sounds, which bounces off of fish and other prey, enabling them to “see” an image in their mind. They are frequently found alone or in small groups, and generally a mother and calf travel together. Calves are chocolate brown at birth and then have grey-brown smooth, hairless skin as adults. Females are larger than males and give birth once every two to three years to only one calf.',
+  facts: `Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges.
+  The Ganges river dolphin can only live in freshwater and is essentially blind. They hunt by emitting ultrasonic sounds, which bounces off of fish and other prey, enabling them to “see” an image in their mind. They are frequently found alone or in small groups, and generally a mother and calf travel together. Calves are chocolate brown at birth and then have grey-brown smooth, hairless skin as adults. Females are larger than males and give birth once every two to three years to only one calf.`,
   human_benefit: 'The Ganges river dolphin is important because it is a reliable indicator of the health of the entire river ecosystem. The government of India declared it the National Aquatic Animal in 2009.'
 }, {
   name: 'Green Turtle',
@@ -612,7 +641,8 @@ const animalsData = [{
   weight: 'Over 400 pounds',
   length: '6 feet',
   habitat: 'Oceans',
-  facts: 'The humphead wrasse is an enormous coral reef fish—growing over six feet long—with a prominent bulge on its forehead. Some of them live to be over 30 years old. They roam through coral reefs in search of hard shelled prey such as mollusks, starfish, or crustaceans.\n\nLocal governments in the Coral Triangle have been urged to stop the trade and consumption of humphead wrasse—one of the most expensive live reef fishes in the world. Live reef fish trade in Southeast Asia continues to be a significant problem that threatens the region’s food security as well as its reefs, as poachers often resort to legal and destructive fishing methods to catch them.',
+  facts: `The humphead wrasse is an enormous coral reef fish—growing over six feet long—with a prominent bulge on its forehead. Some of them live to be over 30 years old. They roam through coral reefs in search of hard shelled prey such as mollusks, starfish, or crustaceans.
+  Local governments in the Coral Triangle have been urged to stop the trade and consumption of humphead wrasse—one of the most expensive live reef fishes in the world. Live reef fish trade in Southeast Asia continues to be a significant problem that threatens the region’s food security as well as its reefs, as poachers often resort to legal and destructive fishing methods to catch them.`,
   human_benefit: 'These fish are very important to coral reef health. They eat crown-of-thorn starfish and therefore keep populations of this damaging coral reef predator in check.'
 }, {
   name: 'Indian Elephant',
@@ -634,7 +664,8 @@ const animalsData = [{
   weight: '396–550 pounds',
   length: 'Average of nine feet from nose to tail',
   habitat: 'Asia',
-  facts: 'The region contains the largest combined area of tiger habitat in the world—equal to roughly the size of France. However, rapid development, such as road construction, is fragmenting habitats. Due to decades of rampant poaching many of the landscapes of this region have no tigers left in them.\n\nThere is hope in other remaining Indochinese tiger habitats, which have a relatively low human presence and offer a unique opportunity for tiger conservation. The best hope of the survival of this subspecies is in the Dawna Tennaserim landscape on the Thailand-Myanmar border where perhaps 250 tigers remain. The forests of the Lower Mekong are considered a restoration landscape with the possibility of reintroducing tigers as the habitat and prey base are there. Southern Laos and Central Vietnam also have potential for recovery of wild tiger populations.',
+  facts: `The region contains the largest combined area of tiger habitat in the world—equal to roughly the size of France. However, rapid development, such as road construction, is fragmenting habitats. Due to decades of rampant poaching many of the landscapes of this region have no tigers left in them.
+  There is hope in other remaining Indochinese tiger habitats, which have a relatively low human presence and offer a unique opportunity for tiger conservation. The best hope of the survival of this subspecies is in the Dawna Tennaserim landscape on the Thailand-Myanmar border where perhaps 250 tigers remain. The forests of the Lower Mekong are considered a restoration landscape with the possibility of reintroducing tigers as the habitat and prey base are there. Southern Laos and Central Vietnam also have potential for recovery of wild tiger populations.`,
   human_benefit: 'Maintaining tiger habitats in the Greater Mekong directly benefits a host of other globally important species like Asian elephants, Asiatic black bear, a suite of wild cattle and many endemic deer.'
 }, {
   name: 'Indus River Dolphin',
@@ -700,7 +731,8 @@ const animalsData = [{
   weight: '4,400 and 12,000 pounds',
   length: '',
   habitat: 'Asisa',
-  facts: 'The Sri Lankan subspecies is the largest and also the darkest of the Asian elephants, with patches of depigmentation—areas with no skin color—on its ears, face, trunk and belly. Once found throughout the tear-shaped island at the bottom of India’s southern tip, these elephants are now being pushed into smaller areas as development activities clear forests and disrupt their ancient migratory routes.\n\nThe herd size in Sri Lanka ranges from 12-20 individuals or more. It is led by the oldest female, or matriarch. In Sri Lanka, herds have been reported to contain nursing units, consisting of lactating females and their young, and juvenile care units, containing females with juveniles. The Sri Lankan elephant population has fallen almost 65% since the turn of the 19th century. Today, the Sri Lanka elephant is protected under the Sri Lankan law and killing one carries the death penalty.',
+  facts: `The Sri Lankan subspecies is the largest and also the darkest of the Asian elephants, with patches of depigmentation—areas with no skin color—on its ears, face, trunk and belly. Once found throughout the tear-shaped island at the bottom of India’s southern tip, these elephants are now being pushed into smaller areas as development activities clear forests and disrupt their ancient migratory routes.
+  The herd size in Sri Lanka ranges from 12-20 individuals or more. It is led by the oldest female, or matriarch. In Sri Lanka, herds have been reported to contain nursing units, consisting of lactating females and their young, and juvenile care units, containing females with juveniles. The Sri Lankan elephant population has fallen almost 65% since the turn of the 19th century. Today, the Sri Lanka elephant is protected under the Sri Lankan law and killing one carries the death penalty.`,
   human_benefit: 'Elephants hold symbolic, cultural and economic importance in Sri Lanka. They attract tourists who visit national parks to observe elephants in the wild. They support logging operations by dragging felled logs and have special significance in religious events.'
 }, {
   name: 'Tiger',
@@ -711,7 +743,8 @@ const animalsData = [{
   weight: '220 - 660 pounds',
   length: '6 - 10 feet',
   habitat: 'Asia',
-  facts: 'The largest of all the Asian big cats, tigers rely primarily on sight and sound rather than smell for hunting. They typically hunt alone and stalk prey. A tiger can consume up to 88 pounds of meat at one time. On average, tigers give birth to two to four cubs every two years. If all the cubs in one litter die, a second litter may be produced within five months.\n\nTigers generally gain independence at two years of age and attain sexual maturity at age three or four for females and at four or five years for males. Juvenile mortality is high however—about half of all cubs do not survive more than two years. Tigers have been known to reach up to 20 years of age in the wild.',
+  facts: `The largest of all the Asian big cats, tigers rely primarily on sight and sound rather than smell for hunting. They typically hunt alone and stalk prey. A tiger can consume up to 88 pounds of meat at one time. On average, tigers give birth to two to four cubs every two years. If all the cubs in one litter die, a second litter may be produced within five months.
+  Tigers generally gain independence at two years of age and attain sexual maturity at age three or four for females and at four or five years for males. Juvenile mortality is high however—about half of all cubs do not survive more than two years. Tigers have been known to reach up to 20 years of age in the wild.`,
   human_benefit: 'As a large predator, the tiger plays a key role in maintaining healthy ecosystems. These ecosystems supply both nature and people with fresh water, food, and health—which means that by saving tigers, we are helping people too.'
 }, {
   name: 'Whale',
@@ -722,7 +755,9 @@ const animalsData = [{
   weight: '20 - 200 tons',
   length: '45 - 100 feet',
   habitat: 'Oceans',
-  facts: 'Whales roam throughout all of the world’s oceans, communicating with complex and mysterious sounds. Their sheer size amazes us: the blue whale can reach lengths of more than 100 feet and weigh up to 200 tons—as much as 33 elephants.\n\nDespite living in the water, whales breathe air. And like humans, they are warm-blooded mammals who nurse their young. A thick layer of fat called blubber insulates them from cold ocean waters.\n\nSome whales are known as baleen whales including blue, right, bowhead, sei and gray whales. This refers to the fact that they have special bristle-like structures in their mouths (called baleen) that strains food from the water. Other whales, such as beluga or sperm whales, have teeth.',
+  facts: `Whales roam throughout all of the world’s oceans, communicating with complex and mysterious sounds. Their sheer size amazes us: the blue whale can reach lengths of more than 100 feet and weigh up to 200 tons—as much as 33 elephants.
+  Despite living in the water, whales breathe air. And like humans, they are warm-blooded mammals who nurse their young. A thick layer of fat called blubber insulates them from cold ocean waters.
+  Some whales are known as baleen whales including blue, right, bowhead, sei and gray whales. This refers to the fact that they have special bristle-like structures in their mouths (called baleen) that strains food from the water. Other whales, such as beluga or sperm whales, have teeth.`,
   human_benefit: 'Whales are at the top of the food chain and have an important role in the overall health of the marine environment. Unfortunately their large size and mythical aura does not protect them; six out of the 13 great whale species are classified as endangered, even after decades of protection.'
 }, {
   name: 'Amur Leopard',
@@ -733,7 +768,8 @@ const animalsData = [{
   weight: '70 - 105 pounds',
   length: '',
   habitat: 'Asia',
-  facts: 'People usually think of leopards in the savannas of Africa but in the Russian Far East, a rare subspecies has adapted to life in the temperate forests that make up the northern-most part of the species’ range. Similar to other leopards, the Amur leopard can run at speeds of up to 37 miles per hour. This incredible animal has been reported to leap more than 19 feet horizontally and up to 10 feet vertically.\n\nThe Amur leopard is solitary. Nimble-footed and strong, it carries and hides unfinished kills so that they are not taken by other predators. It has been reported that some males stay with females after mating, and may even help with rearing the young. Several males sometimes follow and fight over a female. They live for 10-15 years, and in captivity up to 20 years. The Amur leopard is also known as the Far East leopard, the Manchurian leopard or the Korean leopard.',
+  facts: `People usually think of leopards in the savannas of Africa but in the Russian Far East, a rare subspecies has adapted to life in the temperate forests that make up the northern-most part of the species’ range. Similar to other leopards, the Amur leopard can run at speeds of up to 37 miles per hour. This incredible animal has been reported to leap more than 19 feet horizontally and up to 10 feet vertically.
+  The Amur leopard is solitary. Nimble-footed and strong, it carries and hides unfinished kills so that they are not taken by other predators. It has been reported that some males stay with females after mating, and may even help with rearing the young. Several males sometimes follow and fight over a female. They live for 10-15 years, and in captivity up to 20 years. The Amur leopard is also known as the Far East leopard, the Manchurian leopard or the Korean leopard.`,
   human_benefit: 'The Amur leopard is important ecologically, economically and culturally. Conservation of its habitat benefits other species, including Amur tigers and prey species like deer. With the right conservation efforts, we can bring them back and ensure long-term conservation of the region.'
 }, {
   name: 'Black Rhino',
@@ -744,7 +780,8 @@ const animalsData = [{
   weight: '1,760 - 3,080 pounds',
   length: '',
   habitat: 'Africa',
-  facts: 'Black rhinos are the smaller of the two African rhino species. The most notable difference between white and black rhinos are their hooked upper lip. This distinguishes them from the white rhino, which has a square lip. Black rhinos are browsers rather than grazers, and their pointed lip helps them feed on leaves from bushes and trees. They have two horns, and occasionally a third, small posterior horn.\n\nPopulations of black rhino declined dramatically in the 20th century at the hands of European hunters and settlers. Between 1960 and 1995, black rhino numbers dropped by a sobering 98%, to less than 2,500. Thanks to persistent conservation efforts across Africa, black rhino numbers have doubled from their historic low 20 years ago to between 5,042 and 5,455 today. Wildlife crime—in this case, poaching and black-market trafficking of rhino horn—continues to plague the species and threaten its recovery.',
+  facts: `Black rhinos are the smaller of the two African rhino species. The most notable difference between white and black rhinos are their hooked upper lip. This distinguishes them from the white rhino, which has a square lip. Black rhinos are browsers rather than grazers, and their pointed lip helps them feed on leaves from bushes and trees. They have two horns, and occasionally a third, small posterior horn.
+  Populations of black rhino declined dramatically in the 20th century at the hands of European hunters and settlers. Between 1960 and 1995, black rhino numbers dropped by a sobering 98%, to less than 2,500. Thanks to persistent conservation efforts across Africa, black rhino numbers have doubled from their historic low 20 years ago to between 5,042 and 5,455 today. Wildlife crime—in this case, poaching and black-market trafficking of rhino horn—continues to plague the species and threaten its recovery.`,
   human_benefit: 'Rhinos are one of the oldest groups of mammals, virtually living fossils. They play an important role in their habitats and in countries like Namibia, rhinos are an important source of income from ecotourism. The protection of black rhinos creates large blocks of land for conservation purposes. This benefits many other species, including elephants.'
 }, {
   name: 'Bornean Orangutan',
@@ -755,7 +792,11 @@ const animalsData = [{
   weight: '66 – 220 pounds',
   length: '',
   habitat: 'Asia',
-  facts: 'Bornean orangutan populations have declined by more than 50% over the past 60 years, and the species\' habitat has been reduced by at least 55% over the past 20 years.\n\nThe Bornean orangutan differs in appearance from the Sumatran orangutan, with a broader face and shorter beard and also slightly darker in color. Three subspecies are recognized, each localized to different parts of the island:\n\nNorthwest Bornean orangutans are the most threatened subspecies. Its habitat has been seriously affected by logging and hunting, and a mere 1,500 individuals or so remain. Many habitat patches in the area are small and fragmented.\n\nNortheast Bornean orangutans are the smallest in size and found in Sabah and eastern Kalimantan as far as the Mahakam River.\n\nCentral Bornean orangutans are the subspecies with the most animals, with at least 35,000 individuals.',
+  facts: `Bornean orangutan populations have declined by more than 50% over the past 60 years, and the species\' habitat has been reduced by at least 55% over the past 20 years.
+  The Bornean orangutan differs in appearance from the Sumatran orangutan, with a broader face and shorter beard and also slightly darker in color. Three subspecies are recognized, each localized to different parts of the island:
+  Northwest Bornean orangutans are the most threatened subspecies. Its habitat has been seriously affected by logging and hunting, and a mere 1,500 individuals or so remain. Many habitat patches in the area are small and fragmented.
+  Northeast Bornean orangutans are the smallest in size and found in Sabah and eastern Kalimantan as far as the Mahakam River.
+  Central Bornean orangutans are the subspecies with the most animals, with at least 35,000 individuals.`,
   human_benefit: 'Orangutans play a critical role in seed dispersal, keeping forests healthy. Over 500 plant species have been recorded in their diet.'
 }, {
   name: 'Cross River Gorilla',
@@ -766,7 +807,8 @@ const animalsData = [{
   weight: 'Up to 440 pounds',
   length: '',
   habitat: 'Africa',
-  facts: 'This subspecies of the western gorilla is very similar in appearance to the more numerous western lowland gorilla, but subtle differences can be found in the skull and tooth dimensions. Cross River gorillas live in a region populated by many humans who have encroached upon the gorilla’s territory—clearing forests for timber and to create fields for agriculture and livestock. Poaching occurs in the forests as well, and the loss of even a few of these gorillas has a detrimental effect on such a small population.\n\nEfforts to protect these animals are focused on securing the forests that house them. The World Wildlife Foundation and partners have worked with the governments of Cameroon and Nigeria to create a protected area for the Cross River gorilla that spans the border of these two nations.',
+  facts: `This subspecies of the western gorilla is very similar in appearance to the more numerous western lowland gorilla, but subtle differences can be found in the skull and tooth dimensions. Cross River gorillas live in a region populated by many humans who have encroached upon the gorilla’s territory—clearing forests for timber and to create fields for agriculture and livestock. Poaching occurs in the forests as well, and the loss of even a few of these gorillas has a detrimental effect on such a small population.
+  Efforts to protect these animals are focused on securing the forests that house them. The World Wildlife Foundation and partners have worked with the governments of Cameroon and Nigeria to create a protected area for the Cross River gorilla that spans the border of these two nations.`,
   human_benefit: ''
 }, {
   name: 'Hawksbill Turtle',
@@ -788,7 +830,8 @@ const animalsData = [{
   weight: '1,984 - 5,071 pounds',
   length: '10 – 10.5 feet',
   habitat: 'Asia',
-  facts: 'Javan rhinos are the most threatened of the five rhino species, with only 58-68 individuals that live only in Ujung Kulon National Park in Java, Indonesia. Javan rhinos once lived throughout northeast India and Southeast Asia. Vietnam’s last Javan rhino was poached in 2010.\n\nThis species is a dusky grey color and has a single horn of up to about 10 inches. Its skin has a number of loose folds, giving the appearance of armor plating. The Javan rhino is very similar in appearance to the closely-related greater one-horned rhinoceros, but has a much smaller head and less apparent skin folds.',
+  facts: `Javan rhinos are the most threatened of the five rhino species, with only 58-68 individuals that live only in Ujung Kulon National Park in Java, Indonesia. Javan rhinos once lived throughout northeast India and Southeast Asia. Vietnam’s last Javan rhino was poached in 2010.
+  This species is a dusky grey color and has a single horn of up to about 10 inches. Its skin has a number of loose folds, giving the appearance of armor plating. The Javan rhino is very similar in appearance to the closely-related greater one-horned rhinoceros, but has a much smaller head and less apparent skin folds.`,
   human_benefit: 'The population in Ujung Kulon National Park represents the only hope for the survival of a species that is on the brink of extinction. Until the late 19th century and early 20th century, Javan rhinos existed from northeast India and the Sunderbans , throughout mainland Southeast Asia, and on the island of Sumatra. If we lose the population in Java, the entire species will disappear.'
 }, {
   name: 'Malayan Tiger',
@@ -810,7 +853,8 @@ const animalsData = [{
   weight: 'Up to 440 pounds',
   length: '',
   habitat: 'Africa',
-  facts: 'As their name implies, mountain gorillas live in forests high in the mountains, at elevations of 8,000 to 13,000 feet. They have thicker fur, and more of it, compared to other great apes. The fur helps them to survive in a habitat where temperatures often drop below freezing. But as humans have moved more and more into the gorillas’ territory, the gorillas have been pushed farther up into the mountains for longer periods, forcing them to endure dangerous and sometimes deadly conditions.\n\nWhat might have been a bleak outlook for the subspecies just a couple of decades ago has brightened in recent years due to conservation efforts. Despite ongoing civil conflict, poaching and an encroaching human population, both populations of mountain gorillas have increased in numbers.',
+  facts: `As their name implies, mountain gorillas live in forests high in the mountains, at elevations of 8,000 to 13,000 feet. They have thicker fur, and more of it, compared to other great apes. The fur helps them to survive in a habitat where temperatures often drop below freezing. But as humans have moved more and more into the gorillas’ territory, the gorillas have been pushed farther up into the mountains for longer periods, forcing them to endure dangerous and sometimes deadly conditions.
+  What might have been a bleak outlook for the subspecies just a couple of decades ago has brightened in recent years due to conservation efforts. Despite ongoing civil conflict, poaching and an encroaching human population, both populations of mountain gorillas have increased in numbers.`,
   human_benefit: 'Despite years of civil unrest in the region where mountain gorillas live, conservation efforts have found success. The gorilla population increased from 620 animals in 1989 to around 880 today.'
 }, {
   name: 'Orangutan',
@@ -832,7 +876,8 @@ const animalsData = [{
   weight: '176 - 220 lbs',
   length: '',
   habitat: 'Asia',
-  facts: 'The saola was discovered in May 1992 during a joint survey carried out by the Ministry of Forestry of Vietnam and the World Wildlife Foundation in north-central Vietnam. The team found a skull with unusual long, straight horns in a hunter\'s home and knew it was something extraordinary. The find proved to be the first large mammal new to science in more than 50 years and one of the most spectacular zoological discoveries of the 20th century.\n\nSaola (pronounced: sow-la) are recognized by two parallel horns with sharp ends, which can reach 20 inches in length and are found on both males and females. Meaning “spindle horns” in Vietnamese, they are a cousin of cattle but resemble an antelope. Saola have striking white markings on the face and large maxillary glands on the muzzle, which could be used to mark territory or attract mates. They are found only in the Annamite Mountains of Vietnam and Laos.',
+  facts: `The saola was discovered in May 1992 during a joint survey carried out by the Ministry of Forestry of Vietnam and the World Wildlife Foundation in north-central Vietnam. The team found a skull with unusual long, straight horns in a hunter\'s home and knew it was something extraordinary. The find proved to be the first large mammal new to science in more than 50 years and one of the most spectacular zoological discoveries of the 20th century.
+  Saola (pronounced: sow-la) are recognized by two parallel horns with sharp ends, which can reach 20 inches in length and are found on both males and females. Meaning “spindle horns” in Vietnamese, they are a cousin of cattle but resemble an antelope. Saola have striking white markings on the face and large maxillary glands on the muzzle, which could be used to mark territory or attract mates. They are found only in the Annamite Mountains of Vietnam and Laos.`,
   human_benefit: 'The actual size of the remaining population is unknown. Its rarity, distinctiveness and vulnerability make it one of the greatest priorities for conservation in the region. The current population is thought to be a few hundred at a maximum and possibly only a few dozen at a minimum.'
 }, {
   name: 'South China Tiger',
@@ -843,7 +888,8 @@ const animalsData = [{
   weight: '',
   length: '',
   habitat: 'Asia',
-  facts: 'The South China tiger population was estimated to number 4,000 individuals in the early 1950s. In the next few decades, thousands were killed as the subspecies was hunted as a pest. The Chinese government banned hunting in 1979. By 1996 the population was estimated to be just 30-80 individuals.\n\nToday the South China tiger is considered by scientists to be “functionally extinct,” as it has not been sighted in the wild for more than 25 years.',
+  facts: `The South China tiger population was estimated to number 4,000 individuals in the early 1950s. In the next few decades, thousands were killed as the subspecies was hunted as a pest. The Chinese government banned hunting in 1979. By 1996 the population was estimated to be just 30-80 individuals.
+  Today the South China tiger is considered by scientists to be “functionally extinct,” as it has not been sighted in the wild for more than 25 years.`,
   human_benefit: 'South China tigers are a reminder that the threat against the world’s tiger is an urgent one. Today, South China tigers are found in zoos and in South Africa where there are plans to reintroduce captive-bred tigers back into the wild.'
 }, {
   name: 'Sumatran Elephant',
@@ -887,7 +933,8 @@ const animalsData = [{
   weight: '165 – 308 pounds',
   length: '',
   habitat: 'Asia',
-  facts: 'Sumatran tigers are the smallest surviving tiger subspecies and are distinguished by heavy black stripes on their orange coats. The last of Indonesia’s tigers—as few as 400 today—are holding on for survival in the remaining patches of forests on the island of Sumatra. Accelerating deforestation and rampant poaching mean this noble creature could end up like its extinct Javan and Balinese relatives.\n\nIn Indonesia, anyone caught hunting tigers could face jail time and steep fines. But despite increased efforts in tiger conservation—including strengthening law enforcement and antipoaching capacity—a substantial market remains in Sumatra and the rest of Asia for tiger parts and products. Sumatran tigers are losing their habitat and prey fast, and poaching shows no sign of decline.',
+  facts: `Sumatran tigers are the smallest surviving tiger subspecies and are distinguished by heavy black stripes on their orange coats. The last of Indonesia’s tigers—as few as 400 today—are holding on for survival in the remaining patches of forests on the island of Sumatra. Accelerating deforestation and rampant poaching mean this noble creature could end up like its extinct Javan and Balinese relatives.
+  In Indonesia, anyone caught hunting tigers could face jail time and steep fines. But despite increased efforts in tiger conservation—including strengthening law enforcement and antipoaching capacity—a substantial market remains in Sumatra and the rest of Asia for tiger parts and products. Sumatran tigers are losing their habitat and prey fast, and poaching shows no sign of decline.`,
   human_benefit: 'The island of Sumatra is the only place where tigers, rhinos, orangutans and elephants live together. The presence of the Sumatran tiger is an important indicator of a forest\'s biodiversity. Protecting tigers and their habitat means many other species benefit—including humans.'
 }, {
   name: 'Vaquita',
@@ -898,7 +945,8 @@ const animalsData = [{
   weight: 'Up to 120 pounds',
   length: 'Up to 5 feet',
   habitat: 'North America',
-  facts: 'Vaquita, the world’s most rare marine mammal, is on the edge of extinction. This little porpoise wasn\'t discovered until 1958 and a little over half a century later, we are on the brink of losing them forever. Vaquita are often caught and drowned in gillnets used by illegal fishing operations in marine protected areas within Mexico\'s Gulf of California. The population has dropped drastically in the last few years.\n\nThe vaquita has a large dark ring around its eyes and dark patches on its lips that form a thin line from the mouth to the pectoral fins. Its dorsal surface is dark gray, sides pale gray and ventral surface white with long, light gray markings. Newborn vaquita have darker coloration and a wide gray fringe of color that runs from the head to the dorsal flukes, passing through the dorsal and pectoral fins. They are most often found close to shore in the Gulf\'s shallow waters, although they quickly swim away if a boat approaches.',
+  facts: `Vaquita, the world’s most rare marine mammal, is on the edge of extinction. This little porpoise wasn\'t discovered until 1958 and a little over half a century later, we are on the brink of losing them forever. Vaquita are often caught and drowned in gillnets used by illegal fishing operations in marine protected areas within Mexico\'s Gulf of California. The population has dropped drastically in the last few years.
+  The vaquita has a large dark ring around its eyes and dark patches on its lips that form a thin line from the mouth to the pectoral fins. Its dorsal surface is dark gray, sides pale gray and ventral surface white with long, light gray markings. Newborn vaquita have darker coloration and a wide gray fringe of color that runs from the head to the dorsal flukes, passing through the dorsal and pectoral fins. They are most often found close to shore in the Gulf\'s shallow waters, although they quickly swim away if a boat approaches.`,
   human_benefit: 'The vaquita is the most endangered cetacean in the world. With as few as 30 left, the species will become extinct without a fully enforced gillnet ban throughout their entire range.'
 }, {
   name: 'Western Lowland Gorilla',
