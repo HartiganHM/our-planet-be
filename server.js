@@ -23,8 +23,6 @@ const accessControlAllowOrigin = (request, repsonse, next) => {
 
 app.use(accessControlAllowOrigin, urlLogger, timeLogger);
 
-app.use( (request, response, next))
-
 app.get('/api/v1/continents', (request, response) => {
   database('continents').select()
     .then((continents) => {
