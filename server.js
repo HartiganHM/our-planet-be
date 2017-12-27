@@ -15,7 +15,15 @@ const timeLogger = (request, response, next) => {
   next();
 };
 
-app.use(urlLogger, timeLogger);
+const accessControlAllowOrigin = (request, repsonse, next) => {
+  response.header('Access-Control-Allow-Origin', '*');
+  response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+}
+
+app.use(accessControlAllowOrigin, urlLogger, timeLogger);
+
+app.use( (request, response, next))
 
 app.get('/api/v1/continents', (request, response) => {
   database('continents').select()
