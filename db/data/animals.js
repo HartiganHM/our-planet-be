@@ -156,7 +156,7 @@ const animalsData = [{
   weight: '',
   length: 'Up to 6 ft.',
   habitat: 'South America',
-  facts: 'Jaguars are strong swimmers and climbers and require large areas of tropical rain forest and stretches of riverbank to survive. Hunting and habitat loss due to deforestation continue to threaten the survival of these marvelous cats. The World Wildlife Foundation has worked with the government of Brazil to successfully protect large blocks of Amazon forest for the jaguar.',
+  facts: 'Jaguars are strong swimmers and climbers and require large areas of tropical rain forest and stretches of riverbank to survive. Hunting and habitat loss due to deforestation continue to threaten the survival of these marvelous cats. The World Wildlife Fund has worked with the government of Brazil to successfully protect large blocks of Amazon forest for the jaguar.',
   human_benefit: ''
 }, {
   name: 'Mountain Plover',
@@ -375,7 +375,7 @@ const animalsData = [{
   weight: '',
   length: '2 - 5.6 feet long',
   habitat: 'Oceans',
-  facts: 'One of the main nesting zones for iguanas is located on a central tourist beach in the waterfront area of Puerto Villamil on Isabela Island. For several years, the Galápagos National Park protected only the central part of the nesting zone. In 2012, the World Wildlife Foundation, the Municipality of Isabela and the Charles Darwin Foundation extended the protected area to include the entire nesting zone. As part of this effort, additional signs for both tourists and local communities inform them about the importance of this nesting zone. A temporary fence was also built to protect the area and allow iguanas to pass through.',
+  facts: 'One of the main nesting zones for iguanas is located on a central tourist beach in the waterfront area of Puerto Villamil on Isabela Island. For several years, the Galápagos National Park protected only the central part of the nesting zone. In 2012, the World Wildlife Fund, the Municipality of Isabela and the Charles Darwin Foundation extended the protected area to include the entire nesting zone. As part of this effort, additional signs for both tourists and local communities inform them about the importance of this nesting zone. A temporary fence was also built to protect the area and allow iguanas to pass through.',
   human_benefit: 'Marine iguanas are the world’s only oceangoing lizard. They are also only found in the Galápagos, where they can be seen resting on the rocky shores.'
 }, {
   name: 'Olive Ridley Turtle',
@@ -561,7 +561,7 @@ const animalsData = [{
   length: '',
   habitat: 'Asia',
   facts: `Walt Disney himself couldn\'t have crafted a cuter elephant. The pygmy elephants of Borneo are baby-faced with oversized ears, plump bellies and tails so long they sometimes drag on the ground as they walk. They are also more gentle-natured than their Asian elephant counterparts.
-  Once believed to be remnants of a domesticated herd given to the Sultan of Sulu in the 17th century, pygmy elephants were determined by the World Wildlife Foundation to be genetically different from other Asian elephants. DNA evidence proved these elephants were isolated about 300,000 years ago from their cousins on mainland Asia and Sumatra. Over time, they became smaller with relatively larger ears, longer tails and straighter tusks. Today, the pygmy elephants of Borneo are the smallest elephants in Asia.`,
+  Once believed to be remnants of a domesticated herd given to the Sultan of Sulu in the 17th century, pygmy elephants were determined by the World Wildlife Fund to be genetically different from other Asian elephants. DNA evidence proved these elephants were isolated about 300,000 years ago from their cousins on mainland Asia and Sumatra. Over time, they became smaller with relatively larger ears, longer tails and straighter tusks. Today, the pygmy elephants of Borneo are the smallest elephants in Asia.`,
   human_benefit: 'Borneo’s elephants are a high conservation priority, yet they remain the least-understood elephants in the world.'
 }, {
   name: 'Chimpanzee',
@@ -808,7 +808,7 @@ const animalsData = [{
   length: '',
   habitat: 'Africa',
   facts: `This subspecies of the western gorilla is very similar in appearance to the more numerous western lowland gorilla, but subtle differences can be found in the skull and tooth dimensions. Cross River gorillas live in a region populated by many humans who have encroached upon the gorilla’s territory—clearing forests for timber and to create fields for agriculture and livestock. Poaching occurs in the forests as well, and the loss of even a few of these gorillas has a detrimental effect on such a small population.
-  Efforts to protect these animals are focused on securing the forests that house them. The World Wildlife Foundation and partners have worked with the governments of Cameroon and Nigeria to create a protected area for the Cross River gorilla that spans the border of these two nations.`,
+  Efforts to protect these animals are focused on securing the forests that house them. The World Wildlife Fund and partners have worked with the governments of Cameroon and Nigeria to create a protected area for the Cross River gorilla that spans the border of these two nations.`,
   human_benefit: ''
 }, {
   name: 'Hawksbill Turtle',
@@ -876,7 +876,7 @@ const animalsData = [{
   weight: '176 - 220 lbs',
   length: '',
   habitat: 'Asia',
-  facts: `The saola was discovered in May 1992 during a joint survey carried out by the Ministry of Forestry of Vietnam and the World Wildlife Foundation in north-central Vietnam. The team found a skull with unusual long, straight horns in a hunter\'s home and knew it was something extraordinary. The find proved to be the first large mammal new to science in more than 50 years and one of the most spectacular zoological discoveries of the 20th century.
+  facts: `The saola was discovered in May 1992 during a joint survey carried out by the Ministry of Forestry of Vietnam and the World Wildlife Fund in north-central Vietnam. The team found a skull with unusual long, straight horns in a hunter\'s home and knew it was something extraordinary. The find proved to be the first large mammal new to science in more than 50 years and one of the most spectacular zoological discoveries of the 20th century.
   Saola (pronounced: sow-la) are recognized by two parallel horns with sharp ends, which can reach 20 inches in length and are found on both males and females. Meaning “spindle horns” in Vietnamese, they are a cousin of cattle but resemble an antelope. Saola have striking white markings on the face and large maxillary glands on the muzzle, which could be used to mark territory or attract mates. They are found only in the Annamite Mountains of Vietnam and Laos.`,
   human_benefit: 'The actual size of the remaining population is unknown. Its rarity, distinctiveness and vulnerability make it one of the greatest priorities for conservation in the region. The current population is thought to be a few hundred at a maximum and possibly only a few dozen at a minimum.'
 }, {
