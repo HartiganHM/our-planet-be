@@ -4,6 +4,7 @@ const path = require('path');
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
+const port = process.env.PORT || 3001;
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
@@ -46,8 +47,8 @@ const server = app
         response.status(500).json({ error });
       });
   })
-  .listen(3001, () => {
-    console.log('Our Planet BE running on localhost:3001');
+  .listen(port, () => {
+    console.log('Our Planet BE running on port ' + port);
   });
 
 module.exports = server;
