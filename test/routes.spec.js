@@ -6,14 +6,26 @@ const server = require('../server');
 chai.use(chaiHttp);
 
 describe('Client Routes', () => {
-  it('Should return continents endpoint with continents', () => {
+  it('Should return continents endpoint with json', () => {
     return chai
       .request(server)
       .get('/api/v1/continents')
       .then(response => {
         response.should.have.status(200);
-        response.should.be.json
-        ;
+        response.should.be.json;
+      })
+      .catch(error => {
+        throw error;
+      });
+  });
+
+  it('Should return animals enpoint with json', () => {
+    return chai
+      .request(server)
+      .get('/api/v1/animals')
+      .then(response => {
+        response.should.have.status(200);
+        response.should.be.json;
       })
       .catch(error => {
         throw error;
