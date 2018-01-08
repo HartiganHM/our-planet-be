@@ -45,4 +45,23 @@ describe('Client Routes', () => {
   });
 });
 
-describe('API Routes', () => {});
+describe('API Routes', () => {
+  describe('GET /api/v1/continents', () => {
+    it('Should return all of the continents', () => {
+      return chai.request(server)
+      .get('/api/v1/continents')
+      .then(response => {
+        response.should.have.status(200);
+        response.should.be.json;
+        response.body.should.be.a('array');
+        response.body.length.should.equal(8);
+        response.body[0].should.have.property('name');
+        response.body[0].name.should.equal('Oceans');
+        response.body[0].should.have.property('bio');
+      })
+      .catch(error => {
+        throw error;
+      });
+    });
+  });
+});
