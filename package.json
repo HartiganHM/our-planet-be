@@ -4,21 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf node_modules yarn.lock && yarn install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "upgrade": "yarn upgrade-interactive --latest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "knex": "^0.14.2",
-    "pg": "^7.4.0"
+    "knex": "^0.21.4",
+    "pg": "^8.3.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "git+https://github.com/chaijs/chai-http.git#3ea4524",
-    "mocha": "^4.1.0",
-    "nightmare": "^2.10.0"
+    "mocha": "^8.1.1"
   }
 }
