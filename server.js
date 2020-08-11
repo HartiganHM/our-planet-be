@@ -28,6 +28,7 @@ const accessControlAllowOrigin = (request, response, next) => {
 const server = app
   .use(accessControlAllowOrigin, urlLogger, timeLogger)
   // Continents endpoints
+  // GET all continents
   .get('/api/v1/continents', (request, response) => {
     database('continents')
       .select()
