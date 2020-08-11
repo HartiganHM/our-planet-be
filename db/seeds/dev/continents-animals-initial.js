@@ -24,7 +24,7 @@ const createAnimal = (knex, animal) => {
   return knex('animals').insert(animal);
 }
 
-exports.seed = function(knex, Promise) {
+exports.seed = function(knex) {
   return knex('animals').del()
     .then(() => knex('continents').del())
 
