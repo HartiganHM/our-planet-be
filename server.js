@@ -2,14 +2,10 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
-const environment = process.env.NODE_ENV || 'development';
-const configuration = require('./knexfile')[environment];
-const database = require('knex')(configuration);
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
+const Twilio = require('twilio');
 
-const app = express();
-const port = process.env.PORT || 3001;
-
+// Static variables
+const RESET_KEYWORD = 'reset';
 const EXCLUDED_PROPERTIES = ['id', 'continent_id', 'created_at', 'updated_at'];
 const ANIMAL_COLUMN_ENUM = {
   name: { label: 'Name', order: 0 },
@@ -20,13 +16,28 @@ const ANIMAL_COLUMN_ENUM = {
   height: { label: 'Height', order: 5 },
   weight: { label: 'Weight', order: 6 },
   length: { label: 'Length', order: 7 },
-  facts: { label: 'Facts', order: 8 },
-  human_benefit: { label: 'How they help us', order: 9 },
+  facts: { label: 'The Facts', order: 8 },
+  human_benefit: { label: "Why I'm Important", order: 9 },
 };
 const DEFAULT_ANIMAL_RESPONSES = {
   countryId: '',
   animalId: '',
 };
+
+// Environment variables
+const { NODE_ENV, PORT, SESSION_SECRET } = process.env;
+
+// Environment & DB Setup
+const environment = NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+const database = require('knex')(configuration);
+
+// App setup
+const app = express();
+const port = PORT || 3001;
+
+// Twilio setup
+const { MessagingResponse } = Twilio.twiml;
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
@@ -48,59 +59,91 @@ const accessControlAllowOrigin = (request, response, next) => {
 };
 
 const handleInitialMessage = async (request, response, twiml) => {
-  request.session.animalResponses = DEFAULT_ANIMAL_RESPONSES;
-
-  const continents = await database('continents').select();
-  const continentsList = continents.reduce(
-    (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
-    ''
-  );
-
-  twiml.message(`
-    Thanks for writing to Our Planet! 🌎
-
-    We aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos. Who knows, maybe you'll find your new spirit animal! ✨
-
-    Let's start by selecting a continent. Reply with a number and we'll send you a list of endangered animals on that continent:\n\n${continentsList}
-  `);
-
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
-};
-
-const handleReturnAnimals = async (request, response, twiml) => {
-  const {
-    session,
-    body: { Body: countryId },
-  } = request;
-
-  request.session.animalResponses = {
-    ...session.animalResponses,
-    countryId,
-  };
-
-  const continent = await database('continents')
-    .where('id', countryId)
-    .select();
-  const animalsByContinent = await database('animals')
-    .where('continent_id', countryId)
-    .select();
-
-  const animalsList = animalsByContinent
-    .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
-    .reduce(
+  try {
+    const continents = await database('continents').select();
+    const continentsList = continents.reduce(
       (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
       ''
     );
 
-  twiml.message(`
-    Sure, here are some animals that are endangered in ${continent[0].name}.
+    twiml.message(`
+      Thanks for writing to Our Planet! 🌎\n\nWe aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos 🐻\n\nWho knows, maybe you'll find your new spirit animal! ✨
+    `);
+    twiml.message(
+      `Let's start by selecting a region. Reply with a number and we'll send you a list of endangered animals to learn more about:\n\n${continentsList}`
+    );
+    twiml.message(
+      `Oh! And so you know, we don't store any of your personal information. This is just about the animals 🦉`
+    );
 
-    Send me the animal's number and I'll send you some facts about that animal!\n\n${animalsList}
-  `);
+    request.session.animalResponses = DEFAULT_ANIMAL_RESPONSES;
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
 
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Please try again in a few minutes."
+    );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
+  }
+};
+
+const handleReturnAnimals = async (request, response, twiml) => {
+  try {
+    const {
+      session,
+      body: { Body: countryId },
+    } = request;
+
+    const continent = await database('continents')
+      .where('id', countryId)
+      .select();
+    const animalsByContinent = await database('animals')
+      .where('continent_id', countryId)
+      .select();
+
+    if (!animalsByContinent.length) {
+      twiml.message(
+        `It looks like there aren't any endangered animals in ${continent[0].name} 🎉\n\n Choose another region above and we'll send another list ☝️`
+      );
+
+      response.writeHead(200, { 'Content-Type': 'text/xml' });
+      return response.end(twiml.toString());
+    }
+
+    const animalsList = animalsByContinent
+      .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
+      .reduce(
+        (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
+        ''
+      );
+
+    twiml.message(`
+      Great choice 🎉\n\nThese are some of the animals that we know are endangered in ${continent[0].name} 🌏
+    `);
+    twiml.message(
+      `Send me the animal's number and I'll reply with some facts about that animal!\n\n${animalsList}`
+    );
+
+    request.session.animalResponses = {
+      ...session.animalResponses,
+      countryId,
+    };
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
+
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Let's start over by selecting a country using one of the numbers above ☝️"
+    );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
+  }
 };
 
 const handleReturnAnimalById = async (request, response, twiml) => {
@@ -109,47 +152,99 @@ const handleReturnAnimalById = async (request, response, twiml) => {
     body: { Body: animalId },
   } = request;
 
-  request.session.animalResponses = {
-    ...session.animalResponses,
-    animalId,
-  };
+  try {
+    const continent = await database('continents')
+      .where('id', session.animalResponses.countryId)
+      .select();
+    const animal = await database('animals').where('id', animalId).select();
+    const existingAnimalProperties = Object.keys(animal[0])
+      .filter(
+        (property) =>
+          !EXCLUDED_PROPERTIES.includes(property) && animal[0][property]
+      )
+      .sort((propertyA, propertyB) =>
+        ANIMAL_COLUMN_ENUM[propertyA].order >
+        ANIMAL_COLUMN_ENUM[propertyB].order
+          ? 1
+          : -1
+      )
+      .reduce(
+        (accumulator, property) => ({
+          ...accumulator,
+          [ANIMAL_COLUMN_ENUM[property].label]: animal[0][property],
+        }),
+        {}
+      );
 
-  const animal = await database('animals').where('id', animalId).select();
-  const existingAnimalProperties = Object.keys(animal[0])
-    .filter(
-      (property) =>
-        !EXCLUDED_PROPERTIES.includes(property) && animal[0][property]
-    )
-    .sort((propertyA, propertyB) =>
-      ANIMAL_COLUMN_ENUM[propertyA].order > ANIMAL_COLUMN_ENUM[propertyB].order
-        ? 1
-        : -1
-    )
-    .reduce(
-      (accumulator, property) => ({
-        ...accumulator,
-        [ANIMAL_COLUMN_ENUM[property].label]: animal[0][property],
-      }),
-      {}
+    const animalMessages = Object.keys(existingAnimalProperties).reduce(
+      (accumulator, property) => {
+        const propertyString = `${property}:\n\t${existingAnimalProperties[property]}`;
+
+        if (property === ANIMAL_COLUMN_ENUM.facts.label) {
+          return {
+            ...accumulator,
+            facts: propertyString,
+          };
+        }
+
+        if (property === ANIMAL_COLUMN_ENUM.human_benefit.label) {
+          return {
+            ...accumulator,
+            importance: propertyString,
+          };
+        }
+
+        return {
+          ...accumulator,
+          animalMessage1: (accumulator.baseStats += `${propertyString}\n\n`),
+        };
+      },
+      {
+        baseStats: '',
+        facts: '',
+        importance: '',
+      }
     );
 
-  const animalPropertiesList = Object.keys(existingAnimalProperties).reduce(
-    (accumulator, property) =>
-      (accumulator += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
-    ''
-  );
+    const animalLink = `https://hartiganhm.com/our-planet/animals/${existingAnimalProperties.Name.split(
+      ' '
+    ).join('%20')}`;
 
-  twiml.message(`
-    Here are all of the facts we have on the ${existingAnimalProperties.Name}!\n\n${animalPropertiesList}
-  `);
+    twiml.message(
+      `Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃`
+    );
 
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
+    Object.keys(animalMessages).forEach((key) => {
+      if (animalMessages[key].length) {
+        twiml.message(animalMessages[key]);
+      }
+    });
+
+    twiml.message(
+      `Want to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.`
+    );
+
+    request.session.animalResponses = {
+      ...session.animalResponses,
+      animalId,
+    };
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
+
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Let's pick another animal using one of the numbers above ☝️"
+    );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
+  }
 };
 
 const server = app
   .use(accessControlAllowOrigin, urlLogger, timeLogger)
-  .use(session({ secret: process.env.SESSION_SECRET }))
+  .use(session({ secret: SESSION_SECRET }))
   .use(
     bodyParser.urlencoded({
       extended: true,
@@ -183,24 +278,25 @@ const server = app
   })
   // SMS endpoints
   .post('/api/v1/sms', async (request, response) => {
+    const {
+      body,
+      session: { animalResponses },
+    } = request;
     const twiml = new MessagingResponse();
 
     // If no session => Create initial, send instruction
-    if (!request.session.animalResponses) {
-      handleInitialMessage(request, response, twiml);
-      return;
+    if (!animalResponses || body.Body.toLowerCase() === RESET_KEYWORD) {
+      return handleInitialMessage(request, response, twiml);
     }
 
-    const { countryId, animalId } = request.session.animalResponses;
+    const { countryId, animalId } = animalResponses;
 
     if (!countryId) {
-      handleReturnAnimals(request, response, twiml);
-      return;
+      return handleReturnAnimals(request, response, twiml);
     }
 
-    if (!animalId) {
-      handleReturnAnimalById(request, response, twiml);
-      return;
+    if (!animalId || animalId) {
+      return handleReturnAnimalById(request, response, twiml);
     }
   })
   .listen(port, () => {
