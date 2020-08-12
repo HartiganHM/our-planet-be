@@ -99,4 +99,4 @@ const handleSendAnimalResponseSms = async (request, response, twiml) => {
   }
 };
 
-export default handleSendAnimalResponseSms;
+module.exports = handleSendAnimalResponseSms;

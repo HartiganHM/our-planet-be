@@ -1,8 +1,8 @@
-import handleSendAnimalResponseSms from './handleSendAnimalResponseSms';
-import handleSendContinentsResponseSms from './handleSendContinentsResponseSms';
-import handleSendInitialSms from './handleSendInitialSms';
+const handleSendAnimalResponseSms = require('./handleSendAnimalResponseSms');
+const handleSendContinentsResponseSms = require('./handleSendContinentsResponseSms');
+const handleSendInitialSms = require('./handleSendInitialSms');
 
-export {
+module.exports = {
   handleSendAnimalResponseSms,
   handleSendContinentsResponseSms,
   handleSendInitialSms,

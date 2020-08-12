@@ -54,4 +54,4 @@ const handleSendContinentsResponseSms = async (request, response, twiml) => {
   }
 };
 
-export default handleSendContinentsResponseSms;
+module.exports = handleSendContinentsResponseSms;

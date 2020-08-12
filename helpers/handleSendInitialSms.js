@@ -31,4 +31,4 @@ const handleSendInitialSms = async (request, response, twiml) => {
   }
 };
 
-export default handleSendInitialSms;
+module.exports = handleSendInitialSms;
