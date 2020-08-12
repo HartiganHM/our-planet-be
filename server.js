@@ -21,8 +21,8 @@ const ANIMAL_COLUMN_ENUM = {
   height: { label: 'Height', order: 5 },
   weight: { label: 'Weight', order: 6 },
   length: { label: 'Length', order: 7 },
-  facts: { label: 'Facts', order: 8 },
-  human_benefit: { label: 'How they help us', order: 9 },
+  facts: { label: 'The Facts', order: 8 },
+  human_benefit: { label: "Why I'm Important", order: 9 },
 };
 const DEFAULT_ANIMAL_RESPONSES = {
   countryId: '',
@@ -153,6 +153,8 @@ const handleReturnAnimalById = async (request, response, twiml) => {
     ___
 
     Want to keep learning about more animals that share Our Planet? 🌍
+
+    To see this animal on our website, visit: https://hartiganhm.com/our-planet/animals/${existingAnimalProperties.Name}
 
     To start over and choose, send "Reset".
     To choose another animal from ${continent[0].name}, send another animal number.
