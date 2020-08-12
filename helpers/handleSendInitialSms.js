@@ -1,4 +1,9 @@
-const handleSendInitialSms = async (request, response, twiml) => {
+const DEFAULT_ANIMAL_RESPONSES = {
+  countryId: '',
+  animalId: '',
+};
+
+const handleSendInitialSms = async ({ request, response, twiml, database }) => {
   try {
     const continents = await database('continents').select();
     const continentsList = continents.reduce(

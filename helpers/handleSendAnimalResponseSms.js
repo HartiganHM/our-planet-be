@@ -1,4 +1,29 @@
-const handleSendAnimalResponseSms = async (request, response, twiml) => {
+const EXCLUDED_PROPERTIES = [
+  'id',
+  'continent_id',
+  'created_at',
+  'updated_at',
+  'image_url',
+];
+const ANIMAL_COLUMN_ENUM = {
+  name: { label: 'Name', order: 0 },
+  scientific_name: { label: 'Scientific Name', order: 1 },
+  status: { label: 'Endangered Status', order: 2 },
+  habitat: { label: 'Habitat', order: 3 },
+  population: { label: 'Population', order: 4 },
+  height: { label: 'Height', order: 5 },
+  weight: { label: 'Weight', order: 6 },
+  length: { label: 'Length', order: 7 },
+  facts: { label: 'The Facts', order: 8 },
+  human_benefit: { label: "Why I'm Important", order: 9 },
+};
+
+const handleSendAnimalResponseSms = async ({
+  request,
+  response,
+  twiml,
+  database,
+}) => {
   const {
     session,
     body: { Body: animalId },

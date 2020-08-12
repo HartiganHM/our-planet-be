@@ -1,4 +1,9 @@
-const handleSendContinentsResponseSms = async (request, response, twiml) => {
+const handleSendContinentsResponseSms = async ({
+  request,
+  response,
+  twiml,
+  database,
+}) => {
   try {
     const {
       session,
