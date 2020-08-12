@@ -34,6 +34,63 @@ const accessControlAllowOrigin = (request, response, next) => {
   next();
 };
 
+const handleInitialMessage = async (request, response, twiml) => {
+  request.session.animalResponses = DEFAULT_ANIMAL_RESPONSES;
+
+  const continents = await database('continents').select();
+
+  twiml.message(`
+    Thanks for writing to Our Planet! 🌎
+
+    We aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos. Who knows, maybe you'll find your new spirit animal! ✨
+
+    Let's start by selecting a continent. Reply with a number and we'll send you a list of endangered animals on that continent:
+
+    ${continents.reduce(
+      (accumulator, { id, name }) => (accumulator += `\t ${id} - ${name}\n`),
+      ''
+    )}
+  `);
+
+  response.writeHead(200, { 'Content-Type': 'text/xml' });
+  response.end(twiml.toString());
+};
+
+const handleReturnAnimals = async (request, response, twiml) => {
+  const {
+    session,
+    body: { Body: countryId },
+  } = request;
+
+  request.session.animalResponses = {
+    ...session.animalResponses,
+    countryId,
+  };
+
+  const continent = await database('continents')
+    .where('id', countryId)
+    .select();
+  const animalsByContinent = await database('animals')
+    .where('continent_id', countryId)
+    .select();
+
+  twiml.message(`
+    Sure, here are some animals that are endangered in ${continent[0].name}.
+
+    Send me the animal's number and I'll send you some facts about that animal!
+
+    ${animalsByContinent
+      .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
+      .reduce(
+        (accumulator, { id, name }) => (accumulator += `\t ${id} - ${name}\n`),
+        ''
+      )}
+  `);
+
+  response.writeHead(200, { 'Content-Type': 'text/xml' });
+  response.end(twiml.toString());
+};
+
 const server = app
   .use(accessControlAllowOrigin, urlLogger, timeLogger)
   .use(session({ secret: process.env.SESSION_SECRET }))
@@ -78,12 +135,12 @@ const server = app
       return;
     }
 
-    // const { countryId, animalId } = request.session.animalResponses;
+    const { countryId, animalId } = request.session.animalResponses;
 
-    // if (!countryId) {
-    //   handleReturnAnimals(request, response, twiml);
-    //   return;
-    // }
+    if (!countryId) {
+      handleReturnAnimals(request, response, twiml);
+      return;
+    }
 
     // if (!animalId) {
     //   handleReturnAnimalById(request, response, twiml);
