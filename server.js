@@ -79,6 +79,9 @@ const handleInitialMessage = async (request, response, twiml) => {
     twiml.message(
       "Whoops! 🍌\n\nLooks like that didn't work. Please try again in a few minutes."
     );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
   }
 };
 
@@ -96,6 +99,15 @@ const handleReturnAnimals = async (request, response, twiml) => {
       .where('continent_id', countryId)
       .select();
 
+    if (!animalsByContinent.length) {
+      twiml.message(
+        `It looks like there aren't any endangered animals in ${continent[0].name} 🎉\n\n Choose another region above and we'll send another list ☝️`
+      );
+
+      response.writeHead(200, { 'Content-Type': 'text/xml' });
+      return response.end(twiml.toString());
+    }
+
     const animalsList = animalsByContinent
       .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
       .reduce(
@@ -112,13 +124,16 @@ const handleReturnAnimals = async (request, response, twiml) => {
       countryId,
     };
     response.writeHead(200, { 'Content-Type': 'text/xml' });
-    response.end(twiml.toString());
+    return response.end(twiml.toString());
   } catch (error) {
     console.error(error);
 
     twiml.message(
       "Whoops! 🍌\n\nLooks like that didn't work. Let's start over by selecting a country using one of the numbers above ☝️"
     );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
   }
 };
 
@@ -175,13 +190,16 @@ const handleReturnAnimalById = async (request, response, twiml) => {
       animalId,
     };
     response.writeHead(200, { 'Content-Type': 'text/xml' });
-    response.end(twiml.toString());
+    return response.end(twiml.toString());
   } catch (error) {
     console.error(error);
 
     twiml.message(
       "Whoops! 🍌\n\nLooks like that didn't work. Let's pick another animal using one of the numbers above ☝️"
     );
+
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    return response.end(twiml.toString());
   }
 };
 
@@ -229,20 +247,17 @@ const server = app
 
     // If no session => Create initial, send instruction
     if (!animalResponses || body.Body.toLowerCase() === RESET_KEYWORD) {
-      handleInitialMessage(request, response, twiml);
-      return;
+      return handleInitialMessage(request, response, twiml);
     }
 
     const { countryId, animalId } = animalResponses;
 
     if (!countryId) {
-      handleReturnAnimals(request, response, twiml);
-      return;
+      return handleReturnAnimals(request, response, twiml);
     }
 
     if (!animalId || animalId) {
-      handleReturnAnimalById(request, response, twiml);
-      return;
+      return handleReturnAnimalById(request, response, twiml);
     }
   })
   .listen(port, () => {
