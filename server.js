@@ -25,11 +25,7 @@ const DEFAULT_ANIMAL_RESPONSES = {
 };
 
 // Environment variables
-const {
-  NODE_ENV,
-  PORT,
-  SESSION_SECRET,
-} = process.env;
+const { NODE_ENV, PORT, SESSION_SECRET } = process.env;
 
 // Environment & DB Setup
 const environment = NODE_ENV || 'development';
@@ -152,14 +148,18 @@ const handleReturnAnimalById = async (request, response, twiml) => {
         (accumulator += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
       ''
     );
-    console.log(animalPropertiesList);
+
     const animalLink = `https://hartiganhm.com/our-planet/animals/${existingAnimalProperties.Name.split(
       ' '
     ).join('%20')}`;
 
-    twiml.message(`
-      Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃\n\n${animalPropertiesList}\n____________\n\nWant to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.
-    `);
+    twiml.message(
+      `Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃`
+    );
+    twiml.message(animalPropertiesList);
+    twiml.message(
+      `Want to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.`
+    );
 
     response.writeHead(200, { 'Content-Type': 'text/xml' });
     response.end(twiml.toString());
