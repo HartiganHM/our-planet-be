@@ -2,14 +2,9 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
-const environment = process.env.NODE_ENV || 'development';
-const configuration = require('./knexfile')[environment];
-const database = require('knex')(configuration);
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
+const Twilio = require('twilio');
 
-const app = express();
-const port = process.env.PORT || 3001;
-
+// Static variables
 const RESET_KEYWORD = 'reset';
 const EXCLUDED_PROPERTIES = ['id', 'continent_id', 'created_at', 'updated_at'];
 const ANIMAL_COLUMN_ENUM = {
@@ -28,6 +23,25 @@ const DEFAULT_ANIMAL_RESPONSES = {
   countryId: '',
   animalId: '',
 };
+
+// Environment variables
+const {
+  NODE_ENV,
+  PORT,
+  SESSION_SECRET,
+} = process.env;
+
+// Environment & DB Setup
+const environment = NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+const database = require('knex')(configuration);
+
+// App setup
+const app = express();
+const port = PORT || 3001;
+
+// Twilio setup
+const { MessagingResponse } = Twilio.twiml;
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
@@ -58,17 +72,7 @@ const handleInitialMessage = async (request, response, twiml) => {
   );
 
   twiml.message(`
-    Thanks for writing to Our Planet! 🌎
-
-    We aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos 🐻
-    
-    Who knows, maybe you'll find your new spirit animal! ✨
-
-    Let's start by selecting a region. Reply with a number and we'll send you a list of endangered animals to learn more about:\n\n${continentsList}
-
-    ___
-
-    Oh! And so you know, we don't store any of your personal information. This is just about the animals 🦉
+    Thanks for writing to Our Planet! 🌎\n\nWe aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos 🐻\n\nWho knows, maybe you'll find your new spirit animal! ✨\n\nLet's start by selecting a region. Reply with a number and we'll send you a list of endangered animals to learn more about:\n\n${continentsList}____________\n\nOh! And so you know, we don't store any of your personal information. This is just about the animals 🦉
   `);
 
   response.writeHead(200, { 'Content-Type': 'text/xml' });
@@ -101,9 +105,7 @@ const handleReturnAnimals = async (request, response, twiml) => {
     );
 
   twiml.message(`
-    Great choice! These are some of the animals that we know are endangered in ${continent[0].name}.
-
-    Send me the animal's number and I'll reply with some facts about that animal!\n\n${animalsList}
+    Great choice 🎉\n\nThese are some of the animals that we know are endangered in ${continent[0].name} 🌏\n\nSend me the animal's number and I'll reply with some facts about that animal!\n\n${animalsList}
   `);
 
   response.writeHead(200, { 'Content-Type': 'text/xml' });
@@ -116,57 +118,59 @@ const handleReturnAnimalById = async (request, response, twiml) => {
     body: { Body: animalId },
   } = request;
 
-  request.session.animalResponses = {
-    ...session.animalResponses,
-    animalId,
-  };
+  try {
+    request.session.animalResponses = {
+      ...session.animalResponses,
+      animalId,
+    };
 
-  const continent = await database('continent').where('id', session.animalResponses.countryId).select();
-  const animal = await database('animals').where('id', animalId).select();
-  const existingAnimalProperties = Object.keys(animal[0])
-    .filter(
-      (property) =>
-        !EXCLUDED_PROPERTIES.includes(property) && animal[0][property]
-    )
-    .sort((propertyA, propertyB) =>
-      ANIMAL_COLUMN_ENUM[propertyA].order > ANIMAL_COLUMN_ENUM[propertyB].order
-        ? 1
-        : -1
-    )
-    .reduce(
-      (accumulator, property) => ({
-        ...accumulator,
-        [ANIMAL_COLUMN_ENUM[property].label]: animal[0][property],
-      }),
-      {}
+    const continent = await database('continents')
+      .where('id', session.animalResponses.countryId)
+      .select();
+    const animal = await database('animals').where('id', animalId).select();
+    const existingAnimalProperties = Object.keys(animal[0])
+      .filter(
+        (property) =>
+          !EXCLUDED_PROPERTIES.includes(property) && animal[0][property]
+      )
+      .sort((propertyA, propertyB) =>
+        ANIMAL_COLUMN_ENUM[propertyA].order >
+        ANIMAL_COLUMN_ENUM[propertyB].order
+          ? 1
+          : -1
+      )
+      .reduce(
+        (accumulator, property) => ({
+          ...accumulator,
+          [ANIMAL_COLUMN_ENUM[property].label]: animal[0][property],
+        }),
+        {}
+      );
+
+    const animalPropertiesList = Object.keys(existingAnimalProperties).reduce(
+      (accumulator, property) =>
+        (accumulator += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
+      ''
     );
+    console.log(animalPropertiesList);
+    const animalLink = `https://hartiganhm.com/our-planet/animals/${existingAnimalProperties.Name.split(
+      ' '
+    ).join('%20')}`;
 
-  const animalPropertiesList = Object.keys(existingAnimalProperties).reduce(
-    (accumulator, property) =>
-      (accumulator += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
-    ''
-  );
+    twiml.message(`
+      Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃\n\n${animalPropertiesList}\n____________\n\nWant to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.
+    `);
 
-  twiml.message(`
-    Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃\n\n${animalPropertiesList}
-
-    ___
-
-    Want to keep learning about more animals that share Our Planet? 🌍
-
-    To see this animal on our website, visit: https://hartiganhm.com/our-planet/animals/${existingAnimalProperties.Name}
-
-    To start over and choose, send "Reset".
-    To choose another animal from ${continent[0].name}, send another animal number.
-  `);
-
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const server = app
   .use(accessControlAllowOrigin, urlLogger, timeLogger)
-  .use(session({ secret: process.env.SESSION_SECRET }))
+  .use(session({ secret: SESSION_SECRET }))
   .use(
     bodyParser.urlencoded({
       extended: true,
@@ -200,11 +204,14 @@ const server = app
   })
   // SMS endpoints
   .post('/api/v1/sms', async (request, response) => {
-    const { body, session: { animalResponses} } = request;
+    const {
+      body,
+      session: { animalResponses },
+    } = request;
     const twiml = new MessagingResponse();
 
     // If no session => Create initial, send instruction
-    if (!animalResponses || body.toLowerCase() === RESET_KEYWORD) {
+    if (!animalResponses || body.Body.toLowerCase() === RESET_KEYWORD) {
       handleInitialMessage(request, response, twiml);
       return;
     }
