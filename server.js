@@ -59,53 +59,67 @@ const accessControlAllowOrigin = (request, response, next) => {
 };
 
 const handleInitialMessage = async (request, response, twiml) => {
-  request.session.animalResponses = DEFAULT_ANIMAL_RESPONSES;
-
-  const continents = await database('continents').select();
-  const continentsList = continents.reduce(
-    (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
-    ''
-  );
-
-  twiml.message(`
-    Thanks for writing to Our Planet! 🌎\n\nWe aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos 🐻\n\nWho knows, maybe you'll find your new spirit animal! ✨\n\nLet's start by selecting a region. Reply with a number and we'll send you a list of endangered animals to learn more about:\n\n${continentsList}____________\n\nOh! And so you know, we don't store any of your personal information. This is just about the animals 🦉
-  `);
-
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
-};
-
-const handleReturnAnimals = async (request, response, twiml) => {
-  const {
-    session,
-    body: { Body: countryId },
-  } = request;
-
-  request.session.animalResponses = {
-    ...session.animalResponses,
-    countryId,
-  };
-
-  const continent = await database('continents')
-    .where('id', countryId)
-    .select();
-  const animalsByContinent = await database('animals')
-    .where('continent_id', countryId)
-    .select();
-
-  const animalsList = animalsByContinent
-    .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
-    .reduce(
+  try {
+    const continents = await database('continents').select();
+    const continentsList = continents.reduce(
       (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
       ''
     );
 
-  twiml.message(`
-    Great choice 🎉\n\nThese are some of the animals that we know are endangered in ${continent[0].name} 🌏\n\nSend me the animal's number and I'll reply with some facts about that animal!\n\n${animalsList}
-  `);
+    twiml.message(`
+      Thanks for writing to Our Planet! 🌎\n\nWe aim to shed light on endangered animals using knowledge from the World Wildlife Foundation alongside beautiful photos 🐻\n\nWho knows, maybe you'll find your new spirit animal! ✨\n\nLet's start by selecting a region. Reply with a number and we'll send you a list of endangered animals to learn more about:\n\n${continentsList}____________\n\nOh! And so you know, we don't store any of your personal information. This is just about the animals 🦉
+    `);
 
-  response.writeHead(200, { 'Content-Type': 'text/xml' });
-  response.end(twiml.toString());
+    request.session.animalResponses = DEFAULT_ANIMAL_RESPONSES;
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
+
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Please try again in a few minutes."
+    );
+  }
+};
+
+const handleReturnAnimals = async (request, response, twiml) => {
+  try {
+    const {
+      session,
+      body: { Body: countryId },
+    } = request;
+
+    const continent = await database('continents')
+      .where('id', countryId)
+      .select();
+    const animalsByContinent = await database('animals')
+      .where('continent_id', countryId)
+      .select();
+
+    const animalsList = animalsByContinent
+      .sort((animalA, animalB) => (animalA.id > animalB.id ? 1 : -1))
+      .reduce(
+        (accumulator, { id, name }) => (accumulator += `\t${id} - ${name}\n`),
+        ''
+      );
+
+    twiml.message(`
+      Great choice 🎉\n\nThese are some of the animals that we know are endangered in ${continent[0].name} 🌏\n\nSend me the animal's number and I'll reply with some facts about that animal!\n\n${animalsList}
+    `);
+
+    request.session.animalResponses = {
+      ...session.animalResponses,
+      countryId,
+    };
+    response.writeHead(200, { 'Content-Type': 'text/xml' });
+    response.end(twiml.toString());
+  } catch (error) {
+    console.error(error);
+
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Let's start over by selecting a country using one of the numbers above ☝️"
+    );
+  }
 };
 
 const handleReturnAnimalById = async (request, response, twiml) => {
@@ -115,11 +129,6 @@ const handleReturnAnimalById = async (request, response, twiml) => {
   } = request;
 
   try {
-    request.session.animalResponses = {
-      ...session.animalResponses,
-      animalId,
-    };
-
     const continent = await database('continents')
       .where('id', session.animalResponses.countryId)
       .select();
@@ -161,10 +170,18 @@ const handleReturnAnimalById = async (request, response, twiml) => {
       `Want to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.`
     );
 
+    request.session.animalResponses = {
+      ...session.animalResponses,
+      animalId,
+    };
     response.writeHead(200, { 'Content-Type': 'text/xml' });
     response.end(twiml.toString());
   } catch (error) {
     console.error(error);
+
+    twiml.message(
+      "Whoops! 🍌\n\nLooks like that didn't work. Let's pick another animal using one of the numbers above ☝️"
+    );
   }
 };
 
