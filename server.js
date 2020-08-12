@@ -6,7 +6,13 @@ const Twilio = require('twilio');
 
 // Static variables
 const RESET_KEYWORD = 'reset';
-const EXCLUDED_PROPERTIES = ['id', 'continent_id', 'created_at', 'updated_at'];
+const EXCLUDED_PROPERTIES = [
+  'id',
+  'continent_id',
+  'created_at',
+  'updated_at',
+  'image_url',
+];
 const ANIMAL_COLUMN_ENUM = {
   name: { label: 'Name', order: 0 },
   scientific_name: { label: 'Scientific Name', order: 1 },
@@ -121,6 +127,7 @@ const handleReturnAnimals = async (request, response, twiml) => {
         ''
       );
 
+    twiml.message().media(continent[0].image_url);
     twiml.message(`
       Great choice 🎉\n\nThese are some of the animals that we know are endangered in ${continent[0].name} 🌏
     `);
@@ -156,11 +163,12 @@ const handleReturnAnimalById = async (request, response, twiml) => {
     const continent = await database('continents')
       .where('id', session.animalResponses.countryId)
       .select();
-    const animal = await database('animals').where('id', animalId).select();
-    const existingAnimalProperties = Object.keys(animal[0])
+    const animalRow = await database('animals').where('id', animalId).select();
+    const animal = animalRow[0];
+    const existingAnimalProperties = Object.keys(animal)
       .filter(
         (property) =>
-          !EXCLUDED_PROPERTIES.includes(property) && animal[0][property]
+          !EXCLUDED_PROPERTIES.includes(property) && animal[property]
       )
       .sort((propertyA, propertyB) =>
         ANIMAL_COLUMN_ENUM[propertyA].order >
@@ -171,7 +179,7 @@ const handleReturnAnimalById = async (request, response, twiml) => {
       .reduce(
         (accumulator, property) => ({
           ...accumulator,
-          [ANIMAL_COLUMN_ENUM[property].label]: animal[0][property],
+          [ANIMAL_COLUMN_ENUM[property].label]: animal[property],
         }),
         {}
       );
@@ -195,8 +203,9 @@ const handleReturnAnimalById = async (request, response, twiml) => {
         }
 
         return {
-          ...accumulator,
-          animalMessage1: (accumulator.baseStats += `${propertyString}\n\n`),
+          baseStats: (accumulator.baseStats += `${propertyString}\n\n`),
+          facts: accumulator.facts,
+          importance: accumulator.importance
         };
       },
       {
@@ -210,9 +219,12 @@ const handleReturnAnimalById = async (request, response, twiml) => {
       ' '
     ).join('%20')}`;
 
-    twiml.message(
-      `Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃`
-    );
+    twiml.message().media(animal.image_url);
+    twiml
+      .message()
+      .body(
+        `Hi! I'm the ${existingAnimalProperties.Name} 👋\n\nThanks for stopping by! Here's some information about me:`
+      );
 
     Object.keys(animalMessages).forEach((key) => {
       if (animalMessages[key].length) {
