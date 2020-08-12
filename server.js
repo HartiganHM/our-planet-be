@@ -19,10 +19,6 @@ const ANIMAL_COLUMN_ENUM = {
   facts: { label: 'The Facts', order: 8 },
   human_benefit: { label: "Why I'm Important", order: 9 },
 };
-const LONG_PROPERTIES = [
-  ANIMAL_COLUMN_ENUM.facts.label,
-  ANIMAL_COLUMN_ENUM.human_benefit.label,
-];
 const DEFAULT_ANIMAL_RESPONSES = {
   countryId: '',
   animalId: '',
@@ -180,22 +176,33 @@ const handleReturnAnimalById = async (request, response, twiml) => {
         {}
       );
 
-    const { animalMessage1, animalMessage2 } = Object.keys(
-      existingAnimalProperties
-    ).reduce(
-      (accumulator, property) =>
-        LONG_PROPERTIES.includes(property)
-          ? {
-              ...accumulator,
-              animalMessage2: (accumulator.animalMessage2 += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
-            }
-          : {
-              ...accumulator,
-              animalMessage1: (accumulator.animalMessage1 += `${property}:\n\t${existingAnimalProperties[property]}\n\n`),
-            },
+    const animalMessages = Object.keys(existingAnimalProperties).reduce(
+      (accumulator, property) => {
+        const propertyString = `${property}:\n\t${existingAnimalProperties[property]}`;
+
+        if (property === ANIMAL_COLUMN_ENUM.facts.label) {
+          return {
+            ...accumulator,
+            facts: propertyString,
+          };
+        }
+
+        if (property === ANIMAL_COLUMN_ENUM.human_benefit.label) {
+          return {
+            ...accumulator,
+            importance: propertyString,
+          };
+        }
+
+        return {
+          ...accumulator,
+          animalMessage1: (accumulator.baseStats += `${propertyString}\n\n`),
+        };
+      },
       {
-        animalMessage1: '',
-        animalMessage2: '',
+        baseStats: '',
+        facts: '',
+        importance: '',
       }
     );
 
@@ -206,11 +213,12 @@ const handleReturnAnimalById = async (request, response, twiml) => {
     twiml.message(
       `Here are all of the facts we have on the ${existingAnimalProperties.Name}! 🍃`
     );
-    twiml.message(animalMessage1);
 
-    if (animalMessage2.length) {
-      twiml.message(animalMessage2);
-    }
+    Object.keys(animalMessages).forEach((key) => {
+      if (animalMessages[key].length) {
+        twiml.message(animalMessages[key]);
+      }
+    });
 
     twiml.message(
       `Want to keep learning about more animals that share Our Planet? 🌍\n\nTo see this animal on our website, visit: ${animalLink}\n\nTo start over and choose another region, send "RESET".\n\nTo choose another animal from ${continent[0].name}, send another animal number.`
