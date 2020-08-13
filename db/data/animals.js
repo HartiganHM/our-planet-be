@@ -597,7 +597,8 @@ const animalsData = [{
   length: '19 inches',
   habitat: 'Oceans',
   facts: 'This is the only penguin species found north of the equator and in the Galápagos.',
-  human_benefit: ''
+  human_benefit: '',
+  image_url: 'https://our-planet.s3-us-west-2.amazonaws.com/animals/gala%CC%81pagos+penguin.jpg'
 }, {
   name: 'Ganges River Dolphin',
   status: 'Endangered',
