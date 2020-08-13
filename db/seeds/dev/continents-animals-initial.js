@@ -24,10 +24,12 @@ const createContinent = (knex, continent) => {
 const createAnimal = (knex, animal) => {
   const animalWithImages = {
     ...animal,
-    image_url: `https://our-planet.s3-us-west-2.amazonaws.com/animals/${animal.name
-      .toLowerCase()
-      .split(' ')
-      .join('+')}.jpg`,
+    image_url:
+      animal.image_url ||
+      `https://our-planet.s3-us-west-2.amazonaws.com/animals/${animal.name
+        .toLowerCase()
+        .split(' ')
+        .join('+')}.jpg`,
   };
   return knex('animals').insert(animalWithImages);
 };
