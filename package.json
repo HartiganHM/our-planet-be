@@ -7,7 +7,9 @@
     "clean": "rm -rf node_modules yarn.lock && yarn install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "upgrade": "yarn upgrade-interactive --latest"
+    "upgrade": "yarn upgrade-interactive --latest",
+    "migrate-latest": "knex migrate:latest",
+    "seed-db": "knex seed:run"
   },
   "keywords": [],
   "author": "",
